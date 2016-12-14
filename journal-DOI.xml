@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<journals>
+    <journal>
+        <name>Bulletin of the World Health Organization</name>
+        <month>January</month>
+        <year>2006</year>
+   </journal>
+    <journal>
+        <name>Cancer Research</name>
+        <month>January</month>
+        <year>2004</year>
+   </journal>
+    <journal>
+        <name>Computational Crystallography Newsletter</name>
+        <date/>
+   </journal>
+    <journal>
+        <name>Development</name>
+        <month>December</month>
+        <year>2002</year>
+   </journal>
+    <journal>
+        <name>Genetics</name>
+        <month>January</month>
+        <year>2004</year>
+   </journal>
+    <journal>
+        <name>Histology and Histopathology</name>
+        <date/>
+   </journal>
+    <journal>
+        <name>Journal of Applied Physiology</name>
+        <month>January</month>
+        <year>2002</year>
+   </journal>
+    <journal>
+        <name>Journal of Biomolecular NMR</name>
+        <month>May</month>
+        <year>2004</year>
+   </journal>
+    <journal>
+        <name>Journal of Biological Chemistry</name>
+        <month>January</month>
+        <year>1995</year>
+   </journal>
+    <journal>
+        <name>Journal of Cell Science</name>
+        <month>September</month>
+        <year>2002</year>
+   </journal>
+    <journal>
+        <name>Journal of Neurophysiology</name>
+        <month>November</month>
+        <year>2002</year>
+   </journal>
+    <journal>
+        <name>Journal of Neuroscience</name>
+        <month>January</month>
+        <year>2004</year>
+   </journal>
+    <journal>
+        <name>Journal of Pharmacology and Experimental Therapeutics</name>
+        <month>January</month>
+        <year>2002</year>
+   </journal>
+    <journal>
+        <name>Physiological Reviews</name>
+        <month>January</month>
+        <year>2002</year>
+   </journal>
+    <journal>
+        <name>The EMBO Journal</name>
+        <month>January</month>
+        <year>1997</year>
+   </journal>
+</journals>
