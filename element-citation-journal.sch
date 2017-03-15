@@ -2,8 +2,8 @@
 <!-- ============================================================= -->
 <!--  TITLE      eLife Schematron <element-citation> for           -->
 <!--             @publication-type="journal"                       -->
-<!--  VERSION    1.0                                               -->
-<!--  LAST MOD   November 2016  (Created August 2016)              -->
+<!--  VERSION    1.1                                               -->
+<!--  LAST MOD   February 2017  (Created August 2016)              -->
 <!--             Delivered as file "element-citation-journal.sch"  -->        
 <!--                                                               -->
 <!-- SYSTEM:     eLife JATS Schematron Tests                       -->
@@ -54,7 +54,8 @@
        2. if <fpage> is present then neither <elocation-id> nor <comment>In press</comment> are allowed. 
        3. if <elocation-id> is present then neither <fpage> nor <comment>In press</comment> are allowed 
        4. if <comment>In press</comment> is present then neither <elocation-id> nor <fpage> are allowed 
-       5. <lpage> is only allowed if <fpage> is present and must be greater than <fpage>
+       5. <lpage> is only allowed if <fpage> is present and must be greater than <fpage>. 
+       Added in February 2017: this check only works with the first <lpage> element, if there is more than one.
        6. If the content of <fpage> begins with a letter, then the content of  <lpage> must begin with 
        the same letter.
        7. The following tags may not occur more than once in an <element-citation>: <fpage>, 
@@ -150,7 +151,7 @@ with the attribute person-group-type set to 'author'. Reference
       &lt;lpage> is only allowed if &lt;fpage> is present. 
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> but no &lt;fpage>.</report>
     
-    <report test="lpage and (number(fpage) >= number(lpage))"
+    <report test="lpage and (number(fpage) >= number(lpage[1]))"
       role="error" 
       id="err-elem-cit-journal-6-5-2">[err-elem-cit-journal-6-5-2]
       &lt;lpage> must be larger than &lt;fpage>, if present. 

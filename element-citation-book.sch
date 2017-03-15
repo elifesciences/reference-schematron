@@ -2,8 +2,8 @@
 <!-- ============================================================= -->
 <!--  TITLE      eLife Schematron <element-citation> for           -->
 <!--             @publication-type="book"                          -->
-<!--  VERSION    1.0                                               -->
-<!--  LAST MOD   September 2016  (Created August 2016)             -->
+<!--  VERSION    1.1                                               -->
+<!--  LAST MOD   February 2017  (Created August 2016)              -->
 <!--             Delivered as file "element-citation-book.sch"     -->        
 <!--                                                               -->
 <!-- SYSTEM:     eLife JATS Schematron Tests                       -->
@@ -40,7 +40,7 @@
        See pre-edit tests.
        
        Book-13:
-       1. <publisher-name> is required
+       1. <publisher-name> is required and only one is allowed.
        2. No elements allowed inside <publisher-name>
        3. Warn if the content of <publisher-name> ends with a string from an external file of 
        common publisher locations.  
@@ -72,11 +72,13 @@
        1. If both <fpage> and <lpage> are present, the value of <fpage> must be less than the value of <lpage>.
        2. If <lpage> is present, <fpage> must be present.
        3-5. See pre-edit tests.
+       6. There is at most one <lpage> and one <fpage> element. (Added in February 2017)
        
        Book-40:
        The only elements that are allowed as children of <element-citation> if the publication-type="book" are:
        <person-group>, <year>,  <source>,<chapter-title>, <publisher-loc>, <publisher-name>, <volume>, 
        <edition>, <fpage>, <lpage>, <pub-id>. 
+       
 -->
 
 <pattern
@@ -139,7 +141,7 @@
       &lt;publisher-name> elements.</assert>
     
     <report test="some $p in document($publisher-locations)/locations/location/text()
-      satisfies ends-with(publisher-name,$p)"
+      satisfies ends-with(publisher-name[1],$p)"
       role="warning" 
       id="warning-elem-cit-book-13-3">[warning-elem-cit-book-13-3]
       The content of &lt;publisher-name> may not end with a publisher location. 
@@ -152,7 +154,7 @@
       &lt;lpage> and &lt;fpage> are allowed only if &lt;chapter-title> is present. 
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> or &lt;fpage> but no &lt;chapter-title>.</report>
     
-    <report test="(lpage and fpage) and (fpage ge lpage)"
+    <report test="(lpage and fpage) and (fpage ge lpage[1])"
       role="error" 
       id="err-elem-cit-book-36">[err-elem-cit-book-36-1]
       If both &lt;lpage> and &lt;fpage> are present, the value of &lt;fpage> must be less than the value of &lt;lpage>. 
@@ -164,6 +166,13 @@
       id="err-elem-cit-book-36-2">[err-elem-cit-book-36-2]
       If &lt;lpage> is present, &lt;fpage> must also be present. 
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> but not &lt;fpage>.</report>
+    
+    <report test="count(lpage) > 1 or count(fpage) > 1"
+      role="error" 
+      id="err-elem-cit-book-36-6">[err-elem-cit-book-36-6]
+      At most one &lt;lpage> and one &lt;fpage> are allowed. 
+      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(lpage)"/> &lt;lpage> 
+      elements and <xsl:value-of select="count(fpage)"/> &lt;fpage> elements.</report>
     
     <assert test="count(*) = count(person-group| year| source| chapter-title| publisher-loc|publisher-name|volume| 
       edition| fpage| lpage| pub-id)"

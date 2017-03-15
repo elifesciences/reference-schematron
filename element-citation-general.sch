@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================= -->
 <!--  TITLE      eLife Schematron <element-citation>               -->
-<!--  VERSION    1.0                                               -->
-<!--  LAST MOD   November 2016  (Created August 2016)              -->
+<!--  VERSION    1.1                                               -->
+<!--  LAST MOD   February 2017  (Created August 2016)              -->
 <!--             Delivered as file "element-citation-general.sch"  -->        
 <!--                                                               -->
 <!-- SYSTEM:     eLife JATS Schematron Tests                       -->
@@ -54,6 +54,8 @@
       7. If a lower-case letter other than "a" follows digits, there must be another reference 
       with the same author information and the previous letter.
       8. Letter suffixes must be unique for the combination of year and author information.
+      Added in February 2017:
+      9. There may be at most one <year> element.
 
 -->
 
@@ -79,6 +81,14 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
     id="err-elem-cit-gen-name-5">[err-elem-cit-gen-name-5]
     The &lt;etal> element in a reference is not allowed.
     Reference '<xsl:value-of select="ancestor::ref/@id"/>' contains it.</report>
+  
+  <report test="count(year)>1 "
+    role="error" 
+    id="err-elem-cit-gen-date-1-9">[err-elem-cit-gen-date-1-9]
+    There may be at most one &lt;year> element.
+    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(year)"/>
+    &lt;year> elements..
+  </report>
 
   </rule> 
   
@@ -224,12 +234,9 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       )"
       role="error" 
       id="err-elem-cit-gen-date-1-8">[err-elem-cit-gen-date-1-8]
-      <xsl:value-of select="count(ancestor::element-citation/person-group[1]/*)"/>
-      and <xsl:value-of select="ancestor::element-citation/person-group[1]/name[1]/surname"/>
-
       Letter suffixes must be unique for the combination of year and author information. 
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not fulfill this requirement as it 
-      contains the &lt;year> '<xsl:value-of select="."/>' for the author information 
+      contains the &lt;year> '<xsl:value-of select="."/>' for the author information
       '<xsl:value-of select="ancestor::element-citation/person-group[1]/name[1]/surname"/>', which occurs in at least one other reference.</report>
     
   </rule>

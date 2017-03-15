@@ -2,8 +2,8 @@
 <!-- ============================================================= -->
 <!--  TITLE      eLife Schematron <element-citation> for           -->
 <!--             @publication-type="web"                           -->
-<!--  VERSION    1.0                                               -->
-<!--  LAST MOD   November 2016  (Created August 2016)              -->
+<!--  VERSION    1.1                                               -->
+<!--  LAST MOD   February 2017  (Created August 2016)              -->
 <!--             Delivered as file "element-citation-web.sch"      -->        
 <!--                                                               -->
 <!-- SYSTEM:     eLife JATS Schematron Tests                       -->
@@ -101,7 +101,7 @@
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(date-in-citation)"/> 
       &lt;date-in-citation> elements.</assert>
 
-    <assert test="count(*) = count(person-group | article-title | source| year| ext-link | date-in-citation)"
+    <assert test="count(*) = count(person-group|article-title|source|year|ext-link|date-in-citation)"
       role="error" 
       id="err-elem-cit-web-12">[err-elem-cit-web-12]
       The only tags that are allowed as children of &lt;element-citation> with the publication-type="web" are:
@@ -192,7 +192,7 @@
       id="err-elem-cit-web-11-2-2">[err-elem-cit-web-11-2-2]
       The &lt;date-in-citation> element's @iso-8601-date attribute must have the format
       'YYYY-MM-DD'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="@iso-8601-date"/>,
+      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has '<xsl:value-of select="@iso-8601-date"/>',
       which does not have that format.
     </assert>
 
@@ -202,7 +202,8 @@
       The format of the element content must match month, space, day, comma, year.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="."/>.</assert>
     
-    <assert test="format-date(xs:date(@iso-8601-date), '[MNn] [D], [Y]')=."
+    <!-- issue 5 on the eLife lists -->
+    <assert test="(string-length(@iso-8601-date) > 4) and format-date(xs:date(@iso-8601-date), '[MNn] [D], [Y]')=."
       role="error" 
       id="err-elem-cit-web-11-4">[err-elem-cit-web-11-4]
       The element content date must match the @iso-8601-date value.

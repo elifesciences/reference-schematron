@@ -122,7 +122,7 @@ with the attribute person-group-type set to 'author'or 'curator'. Reference
       has @xlink:href='<xsl:value-of select="@xlink:href"/>' and content '<xsl:value-of select="."/>'.</assert>
     
   </rule>
- 
+
 </pattern>
 
 <!-- ============= End Element Citation Software Trial Tests ============ -->

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================= -->
 <!--  TITLE      eLife Schematron <element-citation>               -->
-<!--  VERSION    1.0                                               -->
-<!--  LAST MOD   November 2016  (Created August 2016)              -->
+<!--  VERSION    1.1                                               -->
+<!--  LAST MOD   February 2017  (Created August 2016)              -->
 <!--             Delivered as file "element-citation-high.sch"     -->        
 <!--                                                               -->
 <!-- SYSTEM:     eLife JATS Schematron Tests                       -->
@@ -77,11 +77,18 @@
   <rule context="ref" id="ref">
     <let name="name" value="lower-case(if (local-name(element-citation/person-group[1]/*[1])='name')
       then (element-citation/person-group[1]/name[1]/surname)
-      else (element-citation/person-group[1]/collab))"/>
+      else (element-citation/person-group[1]/*[1]))"/>
     <let name="name2" value="lower-case(if (local-name(element-citation/person-group[1]/*[2])='name')
       then (element-citation/person-group[1]/*[2]/surname)
       else (element-citation/person-group[1]/*[2]))"/>
-    
+    <let name="preceding-name" value="lower-case(if (preceding-sibling::ref[1] and
+      local-name(preceding-sibling::ref[1]/element-citation/person-group[1]/*[1])='name')
+      then (preceding-sibling::ref[1]/element-citation/person-group[1]/name[1]/surname)
+      else (preceding-sibling::ref[1]/element-citation/person-group[1]/*[1]))"/>
+    <let name="preceding-name2" value="lower-case(if (preceding-sibling::ref[1] and
+      local-name(preceding-sibling::ref[1]/element-citation/person-group[1]/*[2])='name')
+      then (preceding-sibling::ref[1]/element-citation/person-group[1]/*[2]/surname)
+      else (preceding-sibling::ref[1]/element-citation/person-group[1]/*[2]))"/>
     <assert test="count(*) = count(element-citation)"
       role="error" 
       id="err-elem-cit-high-1">[err-elem-cit-high-1]
@@ -92,26 +99,26 @@
     
     <!-- else:
        -->
+
     <assert test="if (count(element-citation/person-group[1]/*) != 2)
       then (count(preceding-sibling::ref) = 0 or 
-      ($name > lower-case(preceding-sibling::ref[1]/element-citation/person-group[1]/(name[1]/surname,collab))) or
-      ($name = lower-case(preceding-sibling::ref[1]/element-citation/person-group[1]/(name[1]/surname,collab)) and
+      ($name > $preceding-name) or
+      ($name = $preceding-name and
       element-citation/year >= preceding-sibling::ref[1]/element-citation/year))
-      else (count(preceding-sibling::ref) = 0 or ($name > lower-case(preceding-sibling::ref[1]/element-citation/person-group[1]/(name[1]/surname,collab))) or
-      ($name = lower-case(preceding-sibling::ref[1]/element-citation/person-group[1]/(name[1]/surname,collab)) and
-      $name2 > lower-case(preceding-sibling::ref[1]/element-citation/person-group[1]/(name[2]/surname,collab))) 
+      else (count(preceding-sibling::ref) = 0 
+      or ($name > $preceding-name) or
+      ($name = $preceding-name and $name2 > $preceding-name2) 
       or 
-      ($name = lower-case(preceding-sibling::ref[1]/element-citation/person-group[1]/(name[1]/surname,collab)) and
-      $name2 = lower-case(preceding-sibling::ref[1]/element-citation/person-group[1]/(name[2]/surname,collab)) and
+      ($name = $preceding-name and $name2 = $preceding-name2 and
       element-citation/year >= preceding-sibling::ref[1]/element-citation/year)
       or
-      ($name = lower-case(preceding-sibling::ref[1]/element-citation/person-group[1]/(name[1]/surname,collab)) and
+      ($name = $preceding-name and
       count(preceding-sibling::ref[1]/element-citation/person-group[1]/*) !=2)
       )"
       role="error" 
       id="err-elem-cit-high-2-2">[err-elem-cit-high-2-2]
       The order of &lt;element-citation>s should be name and date, arranged alphabetically 
-      by the first author’s surname, or the value of the &lt;collab> element. In the case of
+      by the first author’s surname, or the value of the first &lt;collab> element. In the case of
       two authors, the sequence is arranged by both authors' surnames, then date. For
       three or more authors, the sequence is the first author's surname, then date.
       Reference '<xsl:value-of select="@id"/>' appears to be in a different order.
@@ -184,23 +191,30 @@
       )
       else 
       if (count(current()/element-citation/person-group[1]/(name|collab))>2) 
-      then (
-      matches(replace($x,'\p{Zs}',' '), concat('^', current()/element-citation/person-group[1]/name[1]/surname,
-      ' et al.', $year-comma))
-      or
-      matches(replace($x,'\p{Zs}',' '), concat('^', current()/element-citation/person-group[1]/name[1]/surname,
-      ' et al.', $year-paren))
-      or
-      matches(replace($x,'\p{Zs}',' '), concat('^', current()/element-citation/person-group[1]/collab[1],
-      ' et al.', $year-comma))
-      or
-      matches(replace($x,'\p{Zs}',' '), concat('^', current()/element-citation/person-group[1]/collab[1],
-      ' et al.', $year-paren))
+      then (if (local-name(current()/element-citation/person-group[1]/*[1])='name')
+            then (matches(replace($x,'\p{Zs}',' '), concat('^', current()/element-citation/person-group[1]/name[1]/surname,
+            ' et al.', $year-comma))
+            or
+            matches(replace($x,'\p{Zs}',' '), concat('^', current()/element-citation/person-group[1]/name[1]/surname,
+            ' et al.', $year-paren)))
+            else (matches(replace($x,'\p{Zs}',' '), concat('^', current()/element-citation/person-group[1]/collab[1],
+            ' et al.', $year-comma))
+            or
+            matches(replace($x,'\p{Zs}',' '), concat('^', current()/element-citation/person-group[1]/collab[1],
+            ' et al.', $year-paren)))
       )   
       else ()
       )"
       role="error"
-      id="err-elem-cit-high-4">[err-elem-cit-high-4]
+      id="err-elem-cit-high-4">
+      <xsl:value-of select="$name"/> and  <xsl:value-of select="$name2"/> 
+      [err-elem-cit-high-4]
+      <!--     <let name="name" value="lower-case(if (local-name(element-citation/person-group[1]/*[1])='name')
+      then (element-citation/person-group[1]/name[1]/surname)
+      else (element-citation/person-group[1]/*[1]))"/>
+    <let name="name2" value="lower-case(if (local-name(element-citation/person-group[1]/*[2])='name')
+      then (element-citation/person-group[1]/*[2]/surname)
+      else (element-citation/person-group[1]/*[2]))"/> -->
       If an element-citation/person-group contains one &lt;name>, 
       the content of the &lt;surname> inside that name must appear in the 
       content of all &lt;xref>s that point to the &lt;element-citation>. 
@@ -217,10 +231,10 @@
       '<xsl:value-of select="element-citation/person-group[1]/(name[1]/surname | collab[1])[1]"/>'.
     </assert>
     
-    <!--  -->
+      <!-- If there is more than one year (caught by a different test), use the first year to compare. -->
     <assert test="every $x in //xref[@rid=current()/@id]
-      satisfies (matches(replace($x,'\p{Zs}',' '), concat(', ',current()/element-citation/year),'s') or
-      matches(replace($x,'\p{Zs}',' '), concat('\(',current()/element-citation/year,'\)')))"
+      satisfies (matches(replace($x,'\p{Zs}',' '), concat(', ',current()/element-citation/year[1]),'s') or
+      matches(replace($x,'\p{Zs}',' '), concat('\(',current()/element-citation/year[1],'\)')))"
       role="error" 
       id="err-elem-cit-high-5">[err-elem-cit-high-5]
       All xrefs to &lt;ref>s, which contain &lt;element-citation>s, should contain, as the last part 
@@ -243,7 +257,7 @@
       id="err-xref-high-2-1">[err-xref-high-2-1]
       Citations in the text to references with the same author(s) in the same year must be arranged in the same 
       order as the reference list. The xref with the value '<xsl:value-of select="."/>' is in the wrong order in the 
-      text. Check all the references to citations for the same authors to determine which need to be changed."
+      text. Check all the references to citations for the same authors to determine which need to be changed.
     </assert>
     
   </rule>

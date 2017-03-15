@@ -2,8 +2,8 @@
 <!-- ============================================================= -->
 <!--  TITLE      eLife Schematron <element-citation> for           -->
 <!--             @publication-type="confproc"                      -->
-<!--  VERSION    1.0                                               -->
-<!--  LAST MOD   November 2016  (Created October 2016)             -->
+<!--  VERSION    1.1                                               -->
+<!--  LAST MOD   March 2017  (Created October 2016)                -->
 <!--             Delivered as file "element-citation-confproc.sch" -->        
 <!--                                                               -->
 <!-- SYSTEM:     eLife JATS Schematron Tests                       -->
@@ -66,13 +66,14 @@
        2. The value of @xlink:href must start with either "http://" or "https://".
        3. The value of @xlink:href must equal the element content of <ext-link>.
        
-       confproc-15:
+       confproc-16:
        1. There may be at most one <pub-id>.
        2. The <pub-id>, if present, must have @pub-id-type='doi' or 'pmid'.
        
-       confproc-15:
+       confproc-17:
        The only elements that are allowed as children of <element-citation> if the publication-type="confproc" are:
-       <person-group>, <year>,  <source>, <publisher-loc>, <publisher-name>, <pub-id>, and <ext-link>. 
+       <person-group>, <year>, <article-title>, <source>, <conf-loc>, <conf-name>, <fpage>, <lpage>, 
+       <elocation-id>, <pub-id>, and <ext-link>. 
 -->
 
 <pattern
@@ -238,7 +239,7 @@
     <assert test="@pub-id-type='doi' or @pub-id-type='pmid'"
       role="error" 
       id="err-elem-cit-confproc-16-2">[err-elem-cit-confproc-16-2]
-      The only allowed pub-id types are 'doi' pr 'pmid'.
+      The only allowed pub-id types are 'doi' or 'pmid'.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a pub-id type of 
       '<xsl:value-of select="@pub-id-type"/>'.</assert>
     
