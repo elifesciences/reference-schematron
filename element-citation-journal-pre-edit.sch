@@ -63,7 +63,7 @@
       If &lt;fpage> is present, &lt;lpage> should also be present.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not have an &lt;lpage> element.</report>
     
-    <report test="matches(fpage,'\D') or matches(lpage, '\D')"
+    <report test="matches(fpage[1],'\D') or matches(lpage[1], '\D')"
       role="warning" 
       id="warning-elem-cit-journal-6-9">[warning-elem-cit-journal-6-9]
       The content of both &lt;fpage> and &lt;lpage> should be all numeric.
@@ -77,7 +77,7 @@
       Reference '<xsl:value-of select="ancestor::ref/@id"/>'. Check for updates.</report>
     
     <assert test="pub-id/@pub-id-type='doi' or
-      (normalize-space(document($journal-doi)/journals/journal[name=normalize-space(current()/source)]/year) > substring(normalize-space(year),1,4))"
+      (normalize-space(document($journal-doi)/journals/journal[name=normalize-space(current()/source)]/year) > substring(normalize-space(year[1]),1,4))"
       role="warning" 
       id="warning-elem-cit-journal-9-2">[warning-elem-cit-journal-9-2]
       The citation does not have a pub-id with pub-id-type of 'doi', and the source is not one 

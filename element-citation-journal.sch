@@ -151,7 +151,7 @@ with the attribute person-group-type set to 'author'. Reference
       &lt;lpage> is only allowed if &lt;fpage> is present. 
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> but no &lt;fpage>.</report>
     
-    <report test="lpage and (number(fpage) >= number(lpage[1]))"
+    <report test="lpage and (number(fpage[1]) >= number(lpage[1]))"
       role="error" 
       id="err-elem-cit-journal-6-5-2">[err-elem-cit-journal-6-5-2]
       &lt;lpage> must be larger than &lt;fpage>, if present. 
@@ -207,7 +207,7 @@ with the attribute person-group-type set to 'author'. Reference
       If &lt;fpage> is present, neither &lt;elocation-id> nor &lt;comment>In press&lt;/comment> may be present. 
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;fpage> and one of those elements.</assert>
     
-    <assert test="matches(normalize-space(.),'^\d.*') or (substring(normalize-space(../lpage),1,1) = substring(normalize-space(.),1,1)) or count(../lpage) eq 0"
+    <assert test="matches(normalize-space(.),'^\d.*') or (substring(normalize-space(../lpage[1]),1,1) = substring(normalize-space(.),1,1)) or count(../lpage) eq 0"
       role="error" 
       id="err-elem-cit-journal-6-6">[err-elem-cit-journal-6-6]
       If the content of &lt;fpage> begins with a letter, then the content of  &lt;lpage> must begin with 
