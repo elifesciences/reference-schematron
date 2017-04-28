@@ -31,6 +31,7 @@
           in which case there may be one with @person-group-type="author" 
           and one with @person-group-type=editor, or 
           3b. if there is a <chapter-title> element see Book-22
+          ---- UPDATED to allow author AND editor even if chapter not present ----
      
        Book-10: 
        1. <source> must occur once and only once 
@@ -98,13 +99,11 @@
 '<xsl:value-of select="ancestor::ref/@id"/>' has a &lt;person-group> type of 
 '<xsl:value-of select="person-group/@person-group-type"/>'.</assert> 
     
-    <assert test="count(person-group)=1 or ((count(person-group/@person-group-type='author')+
-      count(person-group/@person-group-type='editor')=2) and (count(edition)=1 or count(chapter-title)=1))"
+    <assert test="count(person-group)=1 or (count(person-group/@person-group-type='author')+
+      count(person-group/@person-group-type='editor')=2)"
       role="error" 
       id="err-elem-cit-book-2-3">[err-elem-cit-book-2-3]
-      One and only 1 person-group element is allowed (either author or editor) 
-      3a. unless there is an &lt;edition> element or a &lt;chapter-title 
-      element in the &lt;element-citation>, in which case there may be 
+      One person-group element is allowed (either author or editor) or
       one person-group with @person-group-type="author" 
       and one person-group with @person-group-type=editor.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
