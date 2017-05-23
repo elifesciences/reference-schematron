@@ -78,7 +78,7 @@
       count(person-group[@person-group-type='curator']) le 1"
       role="error" 
       id="err-elem-cit-data-3-1">[err-elem-cit-data-3-1]
-      Only 1 person-group of each type (author, compiler, curator) is allowed. 
+      Only one person-group of each type (author, compiler, curator) is allowed. 
       Reference 
       '<xsl:value-of select="ancestor::ref/@id"/>' has 
       <xsl:value-of select="count(person-group[@person-group-type='author'])"/>  &lt;person-group> elements of type of 
@@ -97,23 +97,21 @@
       <assert test="count(data-title)=1"
         role="error" 
         id="err-elem-cit-data-10">[err-elem-cit-data-10]
-        Each  &lt;element-citation> of type 'data' must contain one and
-        only one &lt;data-title> element.
+        Each  &lt;element-citation> of type 'data' must contain one and only one &lt;data-title> element.
         Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
         <xsl:value-of select="count(data-title)"/> &lt;data-title> elements.</assert>
     
     <assert test="count(source)=1"
       role="error" 
       id="err-elem-cit-data-11-2">[err-elem-cit-data-11-2]
-      Each  &lt;element-citation> of type 'data' must contain one and
-      only one &lt;source> element.
+      Each  &lt;element-citation> of type 'data' must contain one and only one &lt;source> element.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
       <xsl:value-of select="count(source)"/> &lt;source> elements.</assert>
     
     <assert test="count(source)=1 and (source/string-length() + sum(descendant::source/*/string-length()) ge 2)"
       role="error" 
       id="err-elem-cit-data-11-3-1">[err-elem-cit-data-11-3-1]
-      A  &lt;source> element within a &lt;element-citation> of type 'data' must contain 
+      A &lt;source> element within a &lt;element-citation> of type 'data' must contain 
       at least two characters.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
     
@@ -121,23 +119,22 @@
       role="error" 
       id="err-elem-cit-data-11-3-2">[err-elem-cit-data-11-3-2]
       A  &lt;source> element within a &lt;element-citation> of type 'data' may only contain the child 
-      elements&lt;italic>, &lt;sub>, and &lt;sup>. 
-      No other elements are allowed.
+      elements&lt;italic>, &lt;sub>, and &lt;sup>. No other elements are allowed.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
     
     <assert test="pub-id or ext-link"
       role="error" 
       id="err-elem-cit-data-13-1">[err-elem-cit-data-13-1]
       There must be at least one pub-id OR an &lt;ext-link>. There may be more than one pub-id.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(pub-id)"/> &lt;pub-id elements and <xsl:value-of select="count(ext-link)"/>  &lt;ext-link> elements.</assert>
+      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(pub-id)"/> &lt;pub-id elements
+      and <xsl:value-of select="count(ext-link)"/>  &lt;ext-link> elements.</assert>
     
     <assert test="count(pub-id) ge 1 or count(ext-link) ge 1"
       role="error" 
       id="err-elem-cit-data-17-1">[err-elem-cit-data-17-1]
       The &lt;ext-link> element is required if there is no &lt;pub-id>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(pub-id)"/> &lt;pub-id> elements and <xsl:value-of select="count(ext-link)"/>  &lt;ext-link> elements.</assert>
+      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(pub-id)"/> &lt;pub-id> elements
+      and <xsl:value-of select="count(ext-link)"/>  &lt;ext-link> elements.</assert>
 
     <assert test="count(*) = count(person-group| data-title| source| year| pub-id| version| ext-link)"
       role="error" 
