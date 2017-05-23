@@ -117,10 +117,10 @@
       )"
       role="error" 
       id="err-elem-cit-high-2-2">[err-elem-cit-high-2-2]
-      The order of &lt;element-citation>s should be name and date, arranged alphabetically 
-      by the first author’s surname, or the value of the first &lt;collab> element. In the case of
-      two authors, the sequence is arranged by both authors' surnames, then date. For
-      three or more authors, the sequence is the first author's surname, then date.
+      The order of &lt;element-citation>s in the reference list should be name and date, arranged alphabetically 
+      by the first author’s surname, or by the value of the first &lt;collab> element. In the case of
+      two authors, the sequence should be arranged by both authors' surnames, then date. For
+      three or more authors, the sequence should be the first author's surname, then date.
       Reference '<xsl:value-of select="@id"/>' appears to be in a different order.
     </assert>
  
@@ -142,9 +142,10 @@
     <assert test="count(preceding-sibling::ref)=0 or number(substring(@id,4)) gt number(substring(preceding-sibling::ref[1]/@id,4))"
       role="error" 
       id="err-elem-cit-high-3-3">[err-elem-cit-high-3-3]
-      The sequence of ids in the &lt;ref> elements must increase monotonically.
+      The sequence of ids in the &lt;ref> elements must increase monotonically
+      (e.g. 1,2,3,4,5, . . . ,50,51,52,53, . . . etc).
       Reference '<xsl:value-of select="@id"/>' has the value 
-      '<xsl:value-of select="@id"/>', which does not.
+      '<xsl:value-of select="@id"/>', which does not fit this pattern.
     </assert>
     
     <let name="year-comma" value="', \d{4}\w?$'"/>
@@ -222,10 +223,10 @@
       of the first &lt;surname> of the first &lt;name>, followed by the string “ and “, 
       followed by the content of the &lt;surname> of the second &lt;name> must appear 
       in the content of all &lt;xref>s that point to the &lt;element-citation>. 
-      If there are more than 2 &lt;name>s in the &lt;person-group>, &lt;xref> that 
-      point to that citation must contain the content of only the first 
+      If there are more than 2 &lt;name>s in the &lt;person-group>, all &lt;xref>s that 
+      point to that reference must contain the content of only the first 
       of the &lt;surname>s, followed by the text "et al."
-      All of these are followed by ', ' and the year, or the year in parentheses.
+      All of these are followed by ', ' and the year, or by the year in parentheses.
       There are <xsl:value-of select="count(//xref[@rid=current()/@id]/@rid)"/> &lt;xref> references 
       with @rid = <xsl:value-of select="@id"/> to be checked. The first name should be 
       '<xsl:value-of select="element-citation/person-group[1]/(name[1]/surname | collab[1])[1]"/>'.
@@ -240,10 +241,10 @@
       All xrefs to &lt;ref>s, which contain &lt;element-citation>s, should contain, as the last part 
       of their content, the string ", " followed by the content of the year element in the 
       &lt;element-citation>, or the year in parentheses. 
-      There are <xsl:value-of select="count(//xref[@rid=current()/@id]/@rid)"/> references to be checked;
-      the incorrect &lt;xref> has @rid <xsl:value-of select="@id"/> and should contain the string 
+      There is an incorrect &lt;xref> with @rid <xsl:value-of select="@id"/>. It should contain the string 
       ', <xsl:value-of select="element-citation/year"/>' or the string 
       '(<xsl:value-of select="element-citation/year"/>)' but does not.
+      There are <xsl:value-of select="count(//xref[@rid=current()/@id]/@rid)"/> references to be checked.
     </assert>
     
   </rule>
