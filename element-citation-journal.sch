@@ -93,13 +93,13 @@
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
       <xsl:value-of select="count(person-group)"/> &lt;person-group> elements.</assert>
     
-      <assert test="person-group[@person-group-type='author']"
-              role="error" 
-              id="err-elem-cit-journal-2-2">[err-elem-cit-journal-2-2]
-Each  &lt;element-citation> of type 'journal' must contain one &lt;person-group> 
-with the attribute person-group-type set to 'author'. Reference 
-'<xsl:value-of select="ancestor::ref/@id"/>' has a  &lt;person-group> type of 
-'<xsl:value-of select="person-group/@person-group-type"/>'.</assert> 
+    <assert test="person-group[@person-group-type='author']"
+      role="error" 
+      id="err-elem-cit-journal-2-2">[err-elem-cit-journal-2-2]
+      Each  &lt;element-citation> of type 'journal' must contain one &lt;person-group> 
+      with the attribute person-group-type 'author'.
+      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a  &lt;person-group> type of 
+      '<xsl:value-of select="person-group/@person-group-type"/>'.</assert> 
 
       <assert test="count(article-title)=1"
         role="error" 
@@ -135,7 +135,7 @@ with the attribute person-group-type set to 'author'. Reference
     <assert test="count(volume) le 1"
       role="error" 
       id="err-elem-cit-journal-5-1-3">[err-elem-cit-journal-5-1-3]
-      There may be at most one  &lt;volume> element within a &lt;element-citation> of type 'journal'.
+      There may be no more than one  &lt;volume> element within a &lt;element-citation> of type 'journal'.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(volume)"/>
       &lt;volume> elements.</assert>
     
@@ -161,7 +161,7 @@ with the attribute person-group-type set to 'author'. Reference
     <report test="count(fpage) gt 1 or count(lpage) gt 1 or count(elocation-id) gt 1 or count(comment) gt 1"
       role="error" 
       id="err-elem-cit-journal-6-7">[err-elem-cit-journal-6-7]
-      The following tags may not occur more than once in an &lt;element-citation>: &lt;fpage>, &lt;lpage>, 
+      The following elements may not occur more than once in an &lt;element-citation>: &lt;fpage>, &lt;lpage>, 
       &lt;elocation-id>, and &lt;comment>In press&lt;/comment>. 
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
       <xsl:value-of select="count(fpage)"/> &lt;fpage>, <xsl:value-of select="count(lpage)"/> &lt;lpage>,
@@ -171,7 +171,7 @@ with the attribute person-group-type set to 'author'. Reference
     <assert test="count(*) = count(person-group| year| article-title| source| volume| fpage| lpage| elocation-id| comment| pub-id)"
       role="error" 
       id="err-elem-cit-journal-12">[err-elem-cit-journal-12]
-      The only tags that are allowed as children of &lt;element-citation> with the publication-type="journal" are:
+      The only elements allowed as children of &lt;element-citation> with the publication-type="journal" are:
         &lt;person-group>, &lt;year>, &lt;article-title>, &lt;source>, &lt;volume>, &lt;fpage>, &lt;lpage>, 
         &lt;elocation-id>, &lt;comment>, and &lt;pub-id>.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has other elements.</assert>
@@ -247,8 +247,8 @@ with the attribute person-group-type set to 'author'. Reference
     <report test="matches(.,'\D')"
       role="error" 
       id="err-elem-cit-journal-10">[err-elem-cit-journal-10]
-      If &lt;pub-id pub-id-type="pmid"> the content must be all numeric. The content of 
-      &lt;pub-id pub-id-type="pmid"> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
+      If &lt;pub-id pub-id-type="pmid"> is present, the content must be all numeric.
+      The content of &lt;pub-id pub-id-type="pmid"> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
       is <xsl:value-of select="."/>.</report>
     
   </rule>
@@ -258,8 +258,8 @@ with the attribute person-group-type set to 'author'. Reference
     <assert test="@pub-id-type='doi' or @pub-id-type='pmid'"
       role="error" 
       id="err-elem-cit-journal-9-1">[err-elem-cit-journal-9-1]
-      Each &lt;pub-id>, if present, must have a @pub-id-type of either "doi" or "pmid". The pub-id-type
-      attribute on &lt;pub-id> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
+      Each &lt;pub-id>, if present, must have a @pub-id-type of either "doi" or "pmid".
+      The pub-id-type attribute on &lt;pub-id> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
       is <xsl:value-of select="@pub-id-type"/>.</assert>
     
   </rule>
