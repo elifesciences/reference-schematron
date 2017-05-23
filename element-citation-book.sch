@@ -93,19 +93,18 @@
     <let name="publisher-locations" value="'publisher-locations.xml'"/>
 
     <assert test="person-group[@person-group-type='author'] or person-group[@person-group-type='editor']"
-              role="error" 
-              id="err-elem-cit-book-2-2">[err-elem-cit-book-2-2]
-      The only values allowed for @person-group-type are "author" and "editor". Reference 
-'<xsl:value-of select="ancestor::ref/@id"/>' has a &lt;person-group> type of 
-'<xsl:value-of select="person-group/@person-group-type"/>'.</assert> 
+      role="error" 
+      id="err-elem-cit-book-2-2">[err-elem-cit-book-2-2]
+      The only values allowed for @person-group-type in book references are "author" and "editor".
+      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a &lt;person-group> type of 
+      '<xsl:value-of select="person-group/@person-group-type"/>'.</assert> 
     
     <assert test="count(person-group)=1 or (count(person-group/@person-group-type='author')+
       count(person-group/@person-group-type='editor')=2)"
       role="error" 
       id="err-elem-cit-book-2-3">[err-elem-cit-book-2-3]
-      One person-group element is allowed (either author or editor) or
-      one person-group with @person-group-type="author" 
-      and one person-group with @person-group-type=editor.
+      In a book reference, there should be a single person-group element (either author or editor) or
+      one person-group with @person-group-type="author" and one person-group with @person-group-type=editor.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
       <xsl:value-of select="count(person-group)"/> &lt;person-group> elements.</assert>
     
@@ -127,15 +126,14 @@
     <assert test="count(source)=1 and count(source/*)=count(source/(italic | sub | sup))"
       role="error" 
       id="err-elem-cit-book-10-2-2">[err-elem-cit-book-10-2-2]
-      A  &lt;source> element within a &lt;element-citation> of type 'book' may may only contain the child 
-      elements&lt;italic>, &lt;sub>, and &lt;sup>. 
-      No other elements are allowed.
+      A  &lt;source> element within a &lt;element-citation> of type 'book' may only contain the child 
+      elements&lt;italic>, &lt;sub>, and &lt;sup>. No other elements are allowed.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has child elements that are not allowed.</assert>
     
     <assert test="count(publisher-name)=1"
       role="error" 
       id="err-elem-cit-book-13-1">[err-elem-cit-book-13-1]
-      One and only one &lt;publisher-name> is required.
+      One and only one &lt;publisher-name> is required in a book reference.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(publisher-name)"/>
       &lt;publisher-name> elements.</assert>
     
@@ -150,7 +148,7 @@
     <report test="(lpage or fpage) and not(chapter-title)"
       role="error" 
       id="err-elem-cit-book-16">[err-elem-cit-book-16]
-      &lt;lpage> and &lt;fpage> are allowed only if &lt;chapter-title> is present. 
+      In a book reference, &lt;lpage> and &lt;fpage> are allowed only if &lt;chapter-title> is present. 
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> or &lt;fpage> but no &lt;chapter-title>.</report>
     
     <report test="(lpage and fpage) and (fpage ge lpage[1])"
@@ -243,7 +241,7 @@
     <report test="matches(.,'\D')"
       role="error" 
       id="err-elem-cit-book-18">[err-elem-cit-book-18]
-      If &lt;pub-id pub-id-type="pmid"> the content must be all numeric. The content of 
+      If &lt;pub-id pub-id-type="pmid"> is present, the content must be all numeric. The content of 
       &lt;pub-id pub-id-type="pmid"> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
       is <xsl:value-of select="."/>.</report>
     
@@ -254,7 +252,7 @@
     <assert test="@pub-id-type='doi' or @pub-id-type='pmid' or @pub-id-type='isbn'"
       role="error" 
       id="err-elem-cit-book-17">[err-elem-cit-book-17]
-      Each &lt;pub-id>, if present, must have a @pub-id-type of one of these values: doi, pmid, isbn. 
+      Each &lt;pub-id>, if present in a book reference, must have a @pub-id-type of one of these values: doi, pmid, isbn. 
       The pub-id-type attribute on &lt;pub-id> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
       is <xsl:value-of select="@pub-id-type"/>.</assert>
     
