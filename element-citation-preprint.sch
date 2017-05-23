@@ -95,7 +95,7 @@
     <assert test="count(pub-id)=1 or count(ext-link)=1"
       role="error" 
       id="err-elem-cit-preprint-10-3">[err-elem-cit-preprint-10-3]
-      Either one &lt;pub-id> or one &lt;ext-link> element is required.
+      Either one &lt;pub-id> or one &lt;ext-link> element is required in a preprint reference.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(pub-id)"/> &lt;pub-id> elements
       and <xsl:value-of select="count(ext-link)"/> &lt;ext-link> elements.</assert>
 
@@ -123,9 +123,9 @@
     <assert test="@pub-id-type='doi'"
       role="error" 
       id="err-elem-cit-preprint-10-2">[err-elem-cit-preprint-10-2]
-      If present, the &lt;pub-id> element must contain @pub-id-type='doi'. The &lt;pub-id> element in 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' contains 
-      @pub-id-type='<xsl:value-of select="@pub-id-type"/>'.</assert>
+      If present, the &lt;pub-id> element must contain @pub-id-type='doi'.
+      The &lt;pub-id> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>'
+      contains @pub-id-type='<xsl:value-of select="@pub-id-type"/>'.</assert>
     
   </rule>
 
@@ -134,8 +134,8 @@
     <assert test="@xlink:href"
       role="error" 
       id="err-elem-cit-preprint-11-1">[err-elem-cit-preprint-11-1]
-      Each &lt;ext-link> element must contain @xlink:href. The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      does not.</assert>
+      Each &lt;ext-link> element must contain @xlink:href.
+      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</assert>
     
     <assert test="starts-with(@xlink:href, 'http://') or starts-with(@xlink:href, 'https://')"
       role="error" 
@@ -157,16 +157,15 @@
   <assert test="./string-length() + sum(*/string-length()) ge 2"
     role="error" 
     id="err-elem-cit-preprint-8-2-1">[err-elem-cit-preprint-8-2-1]
-    A  &lt;article-title> element within a &lt;element-citation> of type 'preprint' must contain 
+    A &lt;article-title> element within a &lt;element-citation> of type 'preprint' must contain 
     at least two characters.
     Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
   
   <assert test="count(*)=count(italic | sub | sup)"
     role="error" 
     id="err-elem-cit-preprint-8-2-2">[err-elem-cit-preprint-8-2-2]
-    A  &lt;article-title> element within a &lt;element-citation> of type 'preprint' may only contain the child 
-    elements&lt;italic>, &lt;sub>, and &lt;sup>. 
-    No other elements are allowed.
+    A &lt;article-title> element within a &lt;element-citation> of type 'preprint' may only contain the child 
+    elements&lt;italic>, &lt;sub>, and &lt;sup>. No other elements are allowed.
     Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
   </rule>
   
@@ -174,16 +173,15 @@
     <assert test="./string-length() + sum(*/string-length()) ge 2"
       role="error" 
       id="err-elem-cit-preprint-9-2-1">[err-elem-cit-preprint-9-2-1]
-      A  &lt;source> element within a &lt;element-citation> of type 'preprint' must contain 
+      A &lt;source> element within a &lt;element-citation> of type 'preprint' must contain 
       at least two characters.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
     
     <assert test="count(*)=count(italic | sub | sup)"
       role="error" 
       id="err-elem-cit-preprint-9-2-2">[err-elem-cit-preprint-9-2-2]
-      A  &lt;source> element within a &lt;element-citation> of type 'preprint' may only contain the child 
-      elements&lt;italic>, &lt;sub>, and &lt;sup>. 
-      No other elements are allowed.
+      A &lt;source> element within a &lt;element-citation> of type 'preprint' may only contain the child 
+      elements&lt;italic>, &lt;sub>, and &lt;sup>. No other elements are allowed.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
     
   </rule>
