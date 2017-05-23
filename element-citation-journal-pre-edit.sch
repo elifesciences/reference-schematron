@@ -80,11 +80,9 @@
       (normalize-space(document($journal-doi)/journals/journal[name=normalize-space(current()/source)]/year) > substring(normalize-space(year[1]),1,4))"
       role="warning" 
       id="warning-elem-cit-journal-9-2">[warning-elem-cit-journal-9-2]
-      The citation does not have a pub-id with pub-id-type of 'doi', and the source is not one 
-      known to not have a DOI. Check for the missing DOI for 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      with &lt;source> '<xsl:value-of select="source"/>' and &lt;year> 
-      <xsl:value-of select="year"/>
+      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not have a pub-id with pub-id-type 'doi',
+      and the source is not on the list of journals that do not have DOIs. Check for the missing DOI for this reference:
+      &lt;source> '<xsl:value-of select="source"/>', &lt;year> <xsl:value-of select="year"/>.
     </assert>
 
   </rule>
