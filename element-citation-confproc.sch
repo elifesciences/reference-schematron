@@ -182,7 +182,7 @@
   <assert test="count(*)=count(italic | sub | sup)"
     role="error" 
     id="err-elem-cit-confproc-9-2-2">[err-elem-cit-confproc-9-2-2]
-    A  &lt;source> element within a &lt;element-citation> of type 'confproc' may may only contain the child 
+    A  &lt;source> element within a &lt;element-citation> of type 'confproc' may only contain the child 
     elements&lt;italic>, &lt;sub>, and &lt;sup>. 
     No other elements are allowed.
     Reference '<xsl:value-of select="ancestor::ref/@id"/>' has child elements that are not allowed.</assert>
