@@ -182,7 +182,7 @@
   <rule context="element-citation[@publication-type='web']/date-in-citation" id="elem-citation-web-date-in-citation"> 
     <assert test="./@iso-8601-date"
       role="error" 
-      id="err-elem-cit-web-11-2-1">[err-elem-cit-web-11-2-2]
+      id="err-elem-cit-web-11-2-1">[err-elem-cit-web-11-2-1]
       The &lt;date-in-citation> element must have an @iso-8601-date attribute.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.
     </assert>
