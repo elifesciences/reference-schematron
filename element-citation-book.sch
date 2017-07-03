@@ -31,7 +31,7 @@
           in which case there may be one with @person-group-type="author" 
           and one with @person-group-type=editor, or 
           3b. if there is a <chapter-title> element see Book-22
-          ---- UPDATED to allow author AND editor even if chapter not present ----
+          >>>>  UPDATED to allow author AND editor even if chapter not present <<<<
      
        Book-10: 
        1. <source> must occur once and only once 
