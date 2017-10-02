@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"   
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"   
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> for alphabetical arrangement  -->
+<!--        of two citations, each by a single author.            -->
+<!--        Test is a PASS.                                       -->
+<!--        Source file:  elife-04126-v4.xml                      -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+    <!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+  <journal-meta>
+     <journal-id journal-id-type="nlm-ta">eLife</journal-id>
+     <journal-id journal-id-type="publisher-id">eLife</journal-id>
+     <journal-title-group>
+         <journal-title>eLife</journal-title>
+     </journal-title-group>
+     <issn publication-format="electronic">2050-084X</issn>
+     <publisher>
+         <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+     </publisher>
+  </journal-meta>
+  <article-meta>
+    <article-id/>
+    <title-group>
+       <article-title>Sample article to test Schematron Rules</article-title>
+    </title-group>
+    <contrib-group>
+      <contrib> </contrib>
+    </contrib-group>
+    <pub-date><year>2016</year></pub-date>
+  </article-meta>
+</front>
+<back>
+<ref-list>
+<!-- pass: two references (each showing single author) arranged alphabetically -->
+<ref id="bib57">
+<element-citation publication-type="book">
+<person-group person-group-type="author">
+<name>
+<surname>Morgan</surname>
+<given-names>DO</given-names>
+</name>
+</person-group>
+<year iso-8601-date="2007">2007</year>
+<source>The Cell Cycle</source>
+<publisher-name>New Science Press</publisher-name>
+</element-citation>
+</ref>
+<ref id="bib58">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Morrison</surname>
+<given-names>DK</given-names>
+</name>
+</person-group>
+<year iso-8601-date="2012">2012</year>
+<article-title>MAP kinase pathways</article-title>
+<source>Cold Spring Harbor Perspectives in Biology</source>
+<volume>4</volume>
+<pub-id pub-id-type="doi">10.1101/cshperspect.a011254</pub-id>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>

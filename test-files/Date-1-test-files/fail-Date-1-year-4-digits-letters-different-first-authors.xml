@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"
+xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML"
+xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> with <year> for content       -->
+<!--        (4 digits plus lower case letter other than "a")      -->
+<!--        for another citation by same first author where       -->
+<!--        that <year> has same date AND letter "a" preceding    -->
+<!--        letter of previous citation.)                         -->
+<!--        Test is a FAIL - the citations have letters but       -->
+<!--        different first authors                               -->
+<!--        Source file:  elife-04126-v4.xml                      -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+<!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">eLife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id/>
+<title-group>
+<article-title>Sample article to test Schematron Rules</article-title>
+</title-group>
+<contrib-group>
+<contrib> </contrib>
+</contrib-group>
+<pub-date>
+<year>2016</year>
+</pub-date>
+</article-meta>
+</front>
+<back>
+<ref-list>
+<!-- pass: two journal <element-citation>s by same first author where one has 4-digit <year> plus 
+lower case letter "a" and second has 4-digit <year> plus lower case letter "b" --> 
+<ref id="bib52">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Plowman</surname>
+<given-names>GD</given-names>
+</name>
+<name>
+    <surname>Manning</surname>
+    <given-names>G</given-names>
+</name>
+<name>
+<surname>Hunter</surname>
+<given-names>T</given-names>
+</name>
+<name>
+<surname>Sudarsanam</surname>
+<given-names>S</given-names>
+</name>
+</person-group>
+<!-- first Manning citation has an "a" -->
+<year iso-8601-date="2002">2002a</year>
+<article-title>Evolution of protein kinase signaling from yeast to man</article-title>
+<source>Trends in Biochemical Sciences</source>
+<volume>27</volume>
+<fpage>514</fpage>
+<lpage>520</lpage>
+<pub-id pub-id-type="doi">10.1016/S0968-0004(02)02179-5</pub-id>
+</element-citation>
+</ref>
+
+<ref id="bib53">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Manning</surname>
+<given-names>G</given-names>
+</name>
+</person-group>
+<!-- second Manning citation has a "b" -->
+<year iso-8601-date="2002">2002b</year>
+<article-title>The protein kinase complement of the human genome</article-title>
+<source>Science</source>
+<volume>298</volume>
+<fpage>1912</fpage>
+<lpage>1934</lpage>
+<pub-id pub-id-type="doi">10.1126/science.1075762</pub-id>
+</element-citation>
+</ref>
+
+</ref-list>
+</back>
+</article>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"   
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"   
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <xref> to a citation with only one author        -->
+<!--        followed by date; content of <xref> must start with   -->
+<!--        <surname> (within citation's <person-group>), AND     -->
+<!--        be followed by a ", " and the content of <year>       -->
+<!--        (within <element-citation>).                          -->
+<!--        Test is a PASS.                                       -->
+<!--        Source file:  elife-03245-v1.xml                      -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+    <!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+  <journal-meta>
+     <journal-id journal-id-type="nlm-ta">eLife</journal-id>
+     <journal-id journal-id-type="publisher-id">eLife</journal-id>
+     <journal-title-group>
+         <journal-title>eLife</journal-title>
+     </journal-title-group>
+     <issn publication-format="electronic">2050-084X</issn>
+     <publisher>
+         <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+     </publisher>
+  </journal-meta>
+  <article-meta>
+    <article-id/>
+    <title-group>
+       <article-title>Sample article to test Schematron Rules</article-title>
+    </title-group>
+    <contrib-group>
+      <contrib> </contrib>
+    </contrib-group>
+    <pub-date><year>2016</year></pub-date>
+  </article-meta>
+</front>
+<body>
+<!-- pass:  content of <xref> starts with <surname> (within
+<element-citation/<person-group>) of sole author named in 
+<ref> whose @id value matches @rid of <xref> AND is immediately 
+followed by ", " and content of <year> (in <element-citation>). -->  
+<p>Agonists of β3-adrenoceptors (β3-AR) are effective anti-obesity agents in rodents due to their
+ability to stimulate lipolysis and lipid oxidation in adipose tissue (<xref ref-type="bibr"
+rid="bib2">Arch, 2011</xref>).</p>
+</body>
+<back>
+<ref-list>
+<ref id="bib2">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Arch</surname>
+<given-names>JR</given-names>
+</name>
+</person-group>
+<!-- @iso-8601-date added per eLife rules -->
+<year iso-8601-date="2011">2011</year>
+<article-title>Challenges in β(3)-adrenoceptor agonist drug development</article-title>
+<source>Therapeutic Advances in Endocrinology and Metabolism</source>
+<volume>2</volume>
+<fpage>59</fpage>
+<lpage>64</lpage>
+<pub-id pub-id-type="doi">10.1177/2042018811398517</pub-id>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>

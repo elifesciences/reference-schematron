@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"   
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"   
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <xref> to a citation with only two authors;      -->
+<!--        content of <xref> must start with <surname> (within   -->
+<!--        citation's <person-group>) of first author, be        -->
+<!--        followed by "and", and then have <surname> of         -->
+<!--        second author; following the second author's name     -->
+<!--        there must be a ", " and the content of <year>        -->
+<!--        (within <element-citation>).                          --> 
+<!--        Test is a FAIL.                                       -->
+<!--        Source file:  elife-03245-v1.xml                      -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+    <!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+  <journal-meta>
+     <journal-id journal-id-type="nlm-ta">eLife</journal-id>
+     <journal-id journal-id-type="publisher-id">eLife</journal-id>
+     <journal-title-group>
+         <journal-title>eLife</journal-title>
+     </journal-title-group>
+     <issn publication-format="electronic">2050-084X</issn>
+     <publisher>
+         <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+     </publisher>
+  </journal-meta>
+  <article-meta>
+    <article-id/>
+    <title-group>
+       <article-title>Sample article to test Schematron Rules</article-title>
+    </title-group>
+    <contrib-group>
+      <contrib> </contrib>
+    </contrib-group>
+    <pub-date><year>2016</year></pub-date>
+  </article-meta>
+</front>
+<body>
+<!-- pass:  content of <xref> starts with <surname> (within
+<element-citation/<person-group>) of first author named in 
+<ref> whose @id value matches @rid of <xref>, followed by 
+"and", then <surname> of second author; the second author's 
+name is followed by ", " and the content of <year> (within 
+<element-citation>).-->
+<p>ALK7 is highly expressed in rodent and human adipose tissue 
+(<xref ref-type="bibr" rid="bib21">Kang and Reddi, 1996</xref>;
+...), , as well as in a few other tissues implicated in metabolic 
+regulation ....</p>
+
+<!-- fail:  content of <xref> starts with <surname> (within
+<element-citation/<person-group>) of first author named in 
+<ref> whose @id value matches @rid of <xref>, followed by 
+"and", then <surname> of second author.  HOWEVER, the second author's 
+name IS NOT followed by ", " and the content of <year> (within 
+<element-citation>); it's missing the comma.-->
+<p>ALK7 is highly expressed in rodent and human adipose tissue 
+(<xref ref-type="bibr" rid="bib21">Kang and Reddi 1996</xref>;
+...), , as well as in a few other tissues implicated in metabolic 
+regulation ....</p>
+</body>
+<back>
+<ref-list>
+<ref id="bib21">
+<element-citation publication-type="journal">
+<person-group person-group-type="author"><name>
+<surname>Kang</surname>
+<given-names>Y</given-names>
+</name><name>
+<surname>Reddi</surname>
+<given-names>AH</given-names>
+</name></person-group>
+<!-- @iso-8601-date added per eLife rules -->
+<year iso-8601-date="1996">1996</year>
+<article-title>Identification and cloning of a novel type I serine/threonine kinase receptor of the
+TGF-beta/BMP superfamily in rat prostate</article-title>
+<source>Biochemistry and Molecular Biology International</source>
+<volume>40</volume>
+<fpage>993</fpage>
+<lpage>1001</lpage>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"   
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"   
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> for <pub-id> with             -->
+<!--        @pub-id-type value "pmid".                            -->
+<!--        Test is a PASS.                                       -->
+<!--        Source file:  No Source File (DEMO)                   -->
+<!--        (demo based on sample in JATS Archiving Tag Library)  -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+    <!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+  <journal-meta>
+     <journal-id journal-id-type="nlm-ta">eLife</journal-id>
+     <journal-id journal-id-type="publisher-id">eLife</journal-id>
+     <journal-title-group>
+         <journal-title>eLife</journal-title>
+     </journal-title-group>
+     <issn publication-format="electronic">2050-084X</issn>
+     <publisher>
+         <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+     </publisher>
+  </journal-meta>
+  <article-meta>
+    <article-id/>
+    <title-group>
+       <article-title>Sample article to test Schematron Rules</article-title>
+    </title-group>
+    <contrib-group>
+      <contrib> </contrib>
+    </contrib-group>
+    <pub-date><year>2016</year></pub-date>
+  </article-meta>
+</front>
+<back>
+<ref-list>
+<!-- pass: DEMO journal <element-citation> with <pub-id> whose @pub-id-type="pmid" 
+(demo based on sample in JATS Archiving Tag Library) -->
+<ref id="bib8">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Weissert</surname>
+<given-names>W</given-names>
+</name>
+<name>
+<surname>Wan</surname>
+<given-names>T</given-names>
+</name>
+<name>
+<surname>Livieratos</surname>
+<given-names>B</given-names>
+</name>
+<name> 
+<surname>Katz</surname>
+<given-names>S</given-names>
+</name>
+</person-group>
+<year iso-8601-date="1980">1980</year>
+<article-title>Effects and costs of day-care services
+for the chronically ill: a randomized experiment</article-title>
+<source>Medical Care</source>
+<volume>18</volume>
+<fpage>567</fpage>
+<lpage>584</lpage>
+<pub-id pub-id-type="pmid">6772889</pub-id>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>

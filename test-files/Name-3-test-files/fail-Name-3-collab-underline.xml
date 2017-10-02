@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"   
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"   
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> for a collab.                 -->
+<!--        Test is a FAIL (collab contains underlined content).  -->
+<!--        Source file:  elife-05423-v2.xml                      -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+    <!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+  <journal-meta>
+     <journal-id journal-id-type="nlm-ta">eLife</journal-id>
+     <journal-id journal-id-type="publisher-id">eLife</journal-id>
+     <journal-title-group>
+         <journal-title>eLife</journal-title>
+     </journal-title-group>
+     <issn publication-format="electronic">2050-084X</issn>
+     <publisher>
+         <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+     </publisher>
+  </journal-meta>
+  <article-meta>
+    <article-id/>
+    <title-group>
+       <article-title>Sample article to test Schematron Rules</article-title>
+    </title-group>
+    <contrib-group>
+      <contrib> </contrib>
+    </contrib-group>
+    <pub-date><year>2016</year></pub-date>
+  </article-meta>
+</front>
+<back>
+<ref-list>
+<!-- pass: journal element-citation where collab has italicized content -->
+<ref id="bib10">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<collab><italic>C. elegans</italic> Deletion Mutant Consortium</collab>
+</person-group>
+<year iso-8601-date="2012">2012</year>
+<article-title>Large-scale screening for targeted knockouts in the 
+<italic>Caenorhabditis elegans</italic> genome</article-title>
+<source>G3 (Bethesda)</source>
+<volume>2</volume>
+<fpage>1415</fpage>
+<lpage>1425</lpage>
+<pub-id pub-id-type="doi">10.1534/g3.112.003830</pub-id>
+</element-citation>
+</ref>
+<!-- fail: journal element-citation where collab has underlined content -->
+<ref id="bib910">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<collab><underline>C. elegans</underline> Deletion Mutant Consortium</collab>
+</person-group>
+<year iso-8601-date="2012">2012</year>
+<article-title>Large-scale screening for targeted knockouts in the 
+<italic>Caenorhabditis elegans</italic> genome</article-title>
+<source>G3 (Bethesda)</source>
+<volume>2</volume>
+<fpage>1415</fpage>
+<lpage>1425</lpage>
+<pub-id pub-id-type="doi">10.1534/g3.112.003830</pub-id>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>

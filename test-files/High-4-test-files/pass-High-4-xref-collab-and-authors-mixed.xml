@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"   
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"   
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> for a person-group with       -->
+<!--        one collab and other authors                          -->
+<!--        Test is a PASS.                                       -->
+<!--        Source file:  elife-00184-v1.xml and 'kitchen sink'   -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+    <!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+  <journal-meta>
+     <journal-id journal-id-type="nlm-ta">eLife</journal-id>
+     <journal-id journal-id-type="publisher-id">eLife</journal-id>
+     <journal-title-group>
+         <journal-title>eLife</journal-title>
+     </journal-title-group>
+     <issn publication-format="electronic">2050-084X</issn>
+     <publisher>
+         <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+     </publisher>
+  </journal-meta>
+  <article-meta>
+    <article-id/>
+    <title-group>
+       <article-title>Sample article to test Schematron Rules</article-title>
+    </title-group>
+    <contrib-group>
+      <contrib> </contrib>
+    </contrib-group>
+    <pub-date><year>2016</year></pub-date>
+  </article-meta>
+</front>
+    <body>
+        <!-- pass:  content of <xref> starts with whichever of <collab> and <name> (within
+<element-citation/<person-group>) is the first author named in 
+<ref> whose @id value matches @rid of <xref>, followed by 
+"et al." since the citation has more than two authors. -->  
+        <p>However, it was recently reported that changes in
+            activity do not drive changes in energy expenditure in groups of mice below thermoneutrality (<xref
+                ref-type="bibr" rid="bib27">McQuilton et al., 2012</xref>).</p>
+    </body>
+<back>
+<ref-list>
+<!-- journal element-citation with one person-group with three names and one collab, in mixed order -->
+    <!--Journal reference: collab author -->
+    <ref id="bib27">
+        <element-citation publication-type="journal">
+            <person-group person-group-type="author">
+                <name>
+                    <surname>McQuilton</surname>
+                    <given-names>P</given-names>
+                </name>
+                <collab>FlyBase Consortium</collab>
+                <name>
+                    <surname>St Pierre</surname>
+                    <given-names>SE</given-names>
+                </name>
+                <name>
+                    <surname>Thurmond</surname>
+                    <given-names>J</given-names>
+                </name>
+            </person-group>
+            <year iso-8601-date="2012">2012</year>
+            <article-title>FlyBase 101—the basics of navigating FlyBase</article-title>
+            <source>Nucleic Acids Res</source>
+            <volume>40</volume>
+            <fpage>D706</fpage>
+            <lpage>D714</lpage>
+            <pub-id pub-id-type="doi">10.1093/nar/gkr1030</pub-id>
+            <pub-id pub-id-type="pmid">22127867</pub-id>
+        </element-citation>
+    </ref>
+</ref-list>
+</back>
+</article>

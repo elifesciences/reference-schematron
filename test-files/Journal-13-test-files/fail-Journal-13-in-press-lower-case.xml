@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"
+xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML"
+xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> for "In press" <comment>      -->
+<!--        if no <fpage> or <elocation-id> element exists;       -->
+<!--        content must be precisely "In press" with no          -->
+<!--        variation.                                            -->
+<!--        Test is a FAIL (<comment> exists, but does NOT        -->
+<!--        use prescribed test; instead "in press" in all        -->
+<!--        lower case).                                          -->
+<!--        Source file:  elife-03125-v2.xml                      -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+<!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">eLife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id/>
+<title-group>
+<article-title>Sample article to test Schematron Rules</article-title>
+</title-group>
+<contrib-group>
+<contrib> </contrib>
+</contrib-group>
+<pub-date>
+<year>2016</year>
+</pub-date>
+</article-meta>
+</front>
+<back>
+<ref-list>
+<!-- pass: journal <element-citation> where there is no "page" information 
+exists, but "In press" <comment> present with prescribed text. -->
+<ref id="bib21">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Deng</surname>
+<given-names>L</given-names>
+</name>
+<name>
+<surname>Ignacio-Espinoza</surname>
+<given-names>JC</given-names>
+</name>
+<name>
+<surname>Gregory</surname>
+<given-names>A</given-names>
+</name>
+<name>
+<surname>Poulos</surname>
+<given-names>BT</given-names>
+</name>
+<name>
+<surname>Weitz</surname>
+<given-names>JS</given-names>
+</name>
+<name>
+<surname>Hugenholtz</surname>
+<given-names>P</given-names>
+</name>
+<name>
+<surname>Sullivan</surname>
+<given-names>MB</given-names>
+</name>
+</person-group>
+<!-- @iso-8601-date added per eLife rules -->
+<year iso-8601-date="2014">2014</year>
+<article-title>Viral tagging reveals discrete populations in 
+<italic>Synechococcus</italic> viral genome sequence space</article-title>
+<source>Nature</source>
+<!-- changed "in press" to "In press" per eLife rules -->
+<comment>In press</comment>
+<pub-id pub-id-type="doi">10.1038/nature13459</pub-id>
+</element-citation>
+</ref>
+
+<!-- fail: journal <element-citation> where there is no "page" information 
+exists; <comment> exists but does NOT use prescribed text "In press" (beginning 
+with capital "I"). -->
+<ref id="bib921">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Ignacio-Espinoza</surname>
+<given-names>JC</given-names>
+</name>
+<name>
+<surname>Gregory</surname>
+<given-names>A</given-names>
+</name>
+<name>
+<surname>Poulos</surname>
+<given-names>BT</given-names>
+</name>
+<name>
+<surname>Weitz</surname>
+<given-names>JS</given-names>
+</name>
+<name>
+<surname>Hugenholtz</surname>
+<given-names>P</given-names>
+</name>
+<name>
+<surname>Sullivan</surname>
+<given-names>MB</given-names>
+</name>
+</person-group>
+<!-- @iso-8601-date added per eLife rules -->
+<year iso-8601-date="2014">2014</year>
+<article-title>Viral tagging reveals discrete populations in 
+<italic>Synechococcus</italic> viral genome sequence space</article-title>
+<source>Nature</source>
+<comment>in press</comment>
+<pub-id pub-id-type="doi">10.1038/nature13459</pub-id>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>

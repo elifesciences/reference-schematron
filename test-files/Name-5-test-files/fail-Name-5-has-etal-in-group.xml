@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"
+xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML"
+xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> with NO <etal>.               -->
+<!--        Test is a FAIL (<etal> is inside <person-group>).     -->
+<!--        Source file:  elife-00411-v1.xml                      -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+<!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">eLife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id/>
+<title-group>
+<article-title>Sample article to test Schematron Rules</article-title>
+</title-group>
+<contrib-group>
+<contrib> </contrib>
+</contrib-group>
+<pub-date>
+<year>2016</year>
+</pub-date>
+</article-meta>
+</front>
+<back>
+<ref-list>
+<!-- pass: journal <element-citation> with NO <etal> -->
+<ref id="bib6">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Baker</surname>
+<given-names>NA</given-names>
+</name>
+<name>
+<surname>Sept</surname>
+<given-names>D</given-names>
+</name>
+<name>
+<surname>Joseph</surname>
+<given-names>S</given-names>
+</name>
+<name>
+<surname>Holst</surname>
+<given-names>MJ</given-names>
+</name>
+<name>
+<surname>McCammon</surname>
+<given-names>JA</given-names>
+</name>
+</person-group>
+<!-- @iso-8601-date added per eLife rules -->
+<year iso-8601-date="2001">2001</year>
+<article-title>Electrostatics of nanosystems: application to 
+microtubules and the ribosome</article-title>
+<source>Proc Natl Acad Sci USA</source>
+<volume>98</volume>
+<fpage>10037</fpage>
+<lpage>10041</lpage>
+<pub-id pub-id-type="doi">10.1073/pnas.181342398</pub-id>
+</element-citation>
+</ref>
+<!-- fail: journal <element-citation> where <etal> inside <person-group> 
+(replacing last two author <name>s) -->
+<ref id="bib906">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Baker</surname>
+<given-names>NA</given-names>
+</name>
+<name>
+<surname>Sept</surname>
+<given-names>D</given-names>
+</name>
+<name>
+<surname>Joseph</surname>
+<given-names>S</given-names>
+</name>
+<etal/>
+</person-group>
+<!-- @iso-8601-date added per eLife rules -->
+<year iso-8601-date="2001">2001</year>
+<article-title>Electrostatics of nanosystems: application to 
+microtubules and the ribosome</article-title>
+<source>Proc Natl Acad Sci USA</source>
+<volume>98</volume>
+<fpage>10037</fpage>
+<lpage>10041</lpage>
+<pub-id pub-id-type="doi">10.1073/pnas.181342398</pub-id>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>

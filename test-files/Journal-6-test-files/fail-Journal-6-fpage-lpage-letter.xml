@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"   
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"   
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> for <fpage> and <lpage> where -->
+<!--        <fpage> content begins with a letter (e.g. "A");      -->
+<!--        <lpage> content must begin with same letter.          -->
+<!--        Test is a FAIL (<fpage> starts with "A", but <lpage>  -->
+<!--        begins with "B").                                     -->
+<!--        Source file:  elife-02917-v1.xml                      -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+    <!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+  <journal-meta>
+     <journal-id journal-id-type="nlm-ta">eLife</journal-id>
+     <journal-id journal-id-type="publisher-id">eLife</journal-id>
+     <journal-title-group>
+         <journal-title>eLife</journal-title>
+     </journal-title-group>
+     <issn publication-format="electronic">2050-084X</issn>
+     <publisher>
+         <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+     </publisher>
+  </journal-meta>
+  <article-meta>
+    <article-id/>
+    <title-group>
+       <article-title>Sample article to test Schematron Rules</article-title>
+    </title-group>
+    <contrib-group>
+      <contrib> </contrib>
+    </contrib-group>
+    <pub-date><year>2016</year></pub-date>
+  </article-meta>
+</front>
+<back>
+<ref-list>
+<!-- pass: journal <element-citation> with <fpage> and <lpage> where content of 
+both begin with same letter ("A")-->
+<ref id="bib27">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Szpir</surname>
+<given-names>M</given-names>
+</name>
+</person-group>
+<!-- @iso-8601-date added per eLife rules -->
+<year iso-8601-date="2006">2006</year>
+<article-title>Tracing the origins of autism: a spectrum of new studies</article-title>
+<source>Environmental Health Perspectives</source>
+<volume>114</volume>
+<fpage>A412</fpage>
+<lpage>A418</lpage>
+<pub-id pub-id-type="doi">10.1289/ehp.114-a412</pub-id>
+</element-citation>
+</ref>
+
+<!-- fail: journal <element-citation> with <fpage> and <lpage> where content of 
+<fpage> starts with "A", but <lpage> begins with "B" -->
+<ref id="bib927">
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Szpir</surname>
+<given-names>M</given-names>
+</name>
+</person-group>
+<!-- @iso-8601-date added per eLife rules -->
+<year iso-8601-date="2007">2007</year>
+<article-title>Tracing the origins of autism: a spectrum of new studies</article-title>
+<source>Environmental Health Perspectives</source>
+<volume>114</volume>
+<fpage>A412</fpage>
+<lpage>B418</lpage>
+<pub-id pub-id-type="doi">10.1289/ehp.114-a412</pub-id>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>
