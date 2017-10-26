@@ -99,7 +99,7 @@ lower case letter "b". Note the year is the same as the passing examples, but th
 <element-citation publication-type="journal">
 <person-group person-group-type="author">
 <name>
-<surname>Manning</surname>
+<surname>Tanning</surname>
 <given-names>G</given-names>
 </name>
 <name>
@@ -115,7 +115,7 @@ lower case letter "b". Note the year is the same as the passing examples, but th
 <given-names>S</given-names>
 </name>
 </person-group>
-<!-- first Manning citation has an "a" -->
+<!-- first Tanning citation has an "a" -->
 <year iso-8601-date="2002">2002a</year>
 <article-title>Evolution of protein kinase signaling from yeast to man</article-title>
 <source>Trends in Biochemical Sciences</source>
@@ -129,11 +129,11 @@ lower case letter "b". Note the year is the same as the passing examples, but th
 <element-citation publication-type="journal">
 <person-group person-group-type="author">
 <name>
-<surname>Manning</surname>
+<surname>Tanning</surname>
 <given-names>G</given-names>
 </name>
 </person-group>
-<!-- second Manning citation has a "b" -->
+<!-- second Tanning citation has a "b" -->
 <year iso-8601-date="2002">2002b</year>
 <article-title>The protein kinase complement of the human genome</article-title>
 <source>Science</source>
@@ -147,11 +147,11 @@ lower case letter "b". Note the year is the same as the passing examples, but th
         <element-citation publication-type="journal">
             <person-group person-group-type="author">
                 <name>
-                    <surname>Manning</surname>
+                    <surname>Tanning</surname>
                     <given-names>G</given-names>
                 </name>
             </person-group>
-            <!-- third Manning citation also has a "b" -->
+            <!-- third Tanning citation also has a "b" -->
             <year iso-8601-date="2002">2002b</year>
             <article-title>The protein kinase complement of the human genome</article-title>
             <source>Science</source>

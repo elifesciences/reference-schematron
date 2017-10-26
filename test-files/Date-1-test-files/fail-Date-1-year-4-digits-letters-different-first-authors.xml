@@ -68,7 +68,7 @@ lower case letter "a" and second has 4-digit <year> plus lower case letter "b" -
 <given-names>S</given-names>
 </name>
 </person-group>
-<!-- first Manning citation has an "a" -->
+<!-- first citation has an "a" -->
 <year iso-8601-date="2002">2002a</year>
 <article-title>Evolution of protein kinase signaling from yeast to man</article-title>
 <source>Trends in Biochemical Sciences</source>
@@ -83,11 +83,11 @@ lower case letter "a" and second has 4-digit <year> plus lower case letter "b" -
 <element-citation publication-type="journal">
 <person-group person-group-type="author">
 <name>
-<surname>Manning</surname>
+<surname>Tanning</surname>
 <given-names>G</given-names>
 </name>
 </person-group>
-<!-- second Manning citation has a "b" -->
+<!-- second citation has a "b" -->
 <year iso-8601-date="2002">2002b</year>
 <article-title>The protein kinase complement of the human genome</article-title>
 <source>Science</source>
