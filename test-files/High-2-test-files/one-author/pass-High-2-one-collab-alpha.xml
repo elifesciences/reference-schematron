@@ -48,9 +48,7 @@
 <!-- @iso-8601-date added per eLife rules -->
 <year iso-8601-date="2011">2011</year>
 <source>World population prospects: the 2010 revision</source>
-<ext-link ext-link-type="uri"
-xlink:href="http://esa.un.org/wpp/Documentation/pdf/WPP2010_Highlights.pdf"
->esa.un.org/wpp/Documentation/pdf/WPP2010_Highlights.pdf</ext-link>
+<publisher-name>World Health Organization</publisher-name>
 </element-citation>
 </ref>
 <ref id="bib8">
@@ -59,9 +57,7 @@ xlink:href="http://esa.un.org/wpp/Documentation/pdf/WPP2010_Highlights.pdf"
 <!-- @iso-8601-date added per eLife rules -->
 <year iso-8601-date="2008">2008</year>
 <source>The global burden of disease: 2004 update</source>
-<ext-link ext-link-type="uri"
-xlink:href="http://www.who.int/healthinfo/global_burden_disease/2004_report_update/en/index.html"
->www.who.int/healthinfo/global_burden_disease/2004_report_update/en/index.html</ext-link>
+<publisher-name>World Health Organization</publisher-name>
 </element-citation>
 </ref>
 </ref-list>

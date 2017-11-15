@@ -49,9 +49,7 @@
 <!-- @iso-8601-date added per eLife rules -->
 <year iso-8601-date="2008">2008</year>
 <source>The global burden of disease: 2004 update</source>
-<ext-link ext-link-type="uri"
-xlink:href="http://www.who.int/healthinfo/global_burden_disease/2004_report_update/en/index.html"
->www.who.int/healthinfo/global_burden_disease/2004_report_update/en/index.html</ext-link>
+<publisher-name>World Health Organization</publisher-name>
 </element-citation>
 </ref>
 

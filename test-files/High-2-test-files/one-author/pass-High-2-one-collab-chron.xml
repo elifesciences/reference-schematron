@@ -48,9 +48,7 @@
 <!-- @iso-8601-date added per eLife rules -->
 <year iso-8601-date="2008">2008</year>
 <source>The global burden of disease: 2004 update</source>
-<ext-link ext-link-type="uri"
-xlink:href="http://www.who.int/healthinfo/global_burden_disease/2004_report_update/en/index.html"
->www.who.int/healthinfo/global_burden_disease/2004_report_update/en/index.html</ext-link>
+<publisher-name>World Health Organization</publisher-name>
 </element-citation>
 </ref>
 
@@ -61,9 +59,7 @@ xlink:href="http://www.who.int/healthinfo/global_burden_disease/2004_report_upda
 <year iso-8601-date="2009">2009</year>
 <source>Global health risks: mortality and burden of disease attributable to selected major
 risks</source>
-<ext-link ext-link-type="uri"
-xlink:href="http://www.who.int/healthinfo/global_burden_disease/global_health_risks/en/index.html"
->www.who.int/healthinfo/global_burden_disease/global_health_risks/en/index.html</ext-link>
+<publisher-name>World Health Organization</publisher-name>
 </element-citation>
 </ref>
 

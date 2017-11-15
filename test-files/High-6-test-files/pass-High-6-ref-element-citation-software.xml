@@ -61,7 +61,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 </person-group>
 <year iso-8601-date="2015">2015</year>
 <source>GeneNet: modeling and inferring gene networks</source>
-<uri xlink:href="http://cran.r-project.org/package=GeneNet">http://cran.r-project.org/package=GeneNet</uri>
+<ext-link ext-link-type="uri" xlink:href="http://cran.r-project.org/package=GeneNet">http://cran.r-project.org/package=GeneNet</ext-link>
 </element-citation>
 </ref>
 </ref-list>

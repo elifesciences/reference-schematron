@@ -53,8 +53,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 </person-group>
 <!-- @iso-8601-date added per eLife rules -->
 <year iso-8601-date="2006">2006</year>
-<comment>PhD Thesis</comment>
-<article-title>Submicroscopic <italic>Plasmodium falciparum</italic> gametocytaemia 
+<article-title>PhD thesis: Submicroscopic <italic>Plasmodium falciparum</italic> gametocytaemia 
 and the contribution to malaria transmission</article-title>
 <publisher-name>Radboud University Nijmegen Medical Centre</publisher-name>
 <publisher-loc>Nijmegen, The Netherlands</publisher-loc>
