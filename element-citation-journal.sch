@@ -37,7 +37,7 @@
        
        Journal-4:
        1. <source> must occur once and only once
-       2. <source> must contain at least 2 characters and may only contain <sub>, <sup> and <italic> 
+       2. <source> must contain at least 2 characters and may NOT contain <sub>, <sup> and <italic> etc.
        
        Journal-5: 
        1. <volume> must contain at least 1 character and may not contain any elements. It
@@ -124,12 +124,11 @@
       at least two characters.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
     
-    <assert test="count(source)=1 and count(source/*)=count(source/(italic | sub | sup))"
+    <assert test="count(source)=1 and count(source/*)=0"
       role="error" 
       id="err-elem-cit-journal-4-2-2">[err-elem-cit-journal-4-2-2]
-      A  &lt;source> element within a &lt;element-citation> of type 'journal' may only contain the child 
-      elements&lt;italic>, &lt;sub>, and &lt;sup>. 
-      No other elements are allowed.
+      A  &lt;source> element within a &lt;element-citation> of type 'journal' may not contain child 
+      elements.
       Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
     
     <assert test="count(volume) le 1"
