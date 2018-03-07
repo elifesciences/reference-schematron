@@ -56,8 +56,8 @@
   <!--     <element-citation publication-type="patent"> Tests          -->
   <include href="element-citation-patent.sch"/>  
   
-  <!--     <element-citation publication-type="clinicaltrial"> Tests          -->
-  <include href="element-citation-clinicaltrial.sch"/>  
+  <!--     <element-citation publication-type="clinicaltrial"> Tests - excluded due to changes in reference guidelines  -->
+  <!-- <include href="element-citation-clinicaltrial.sch"/>  --> 
   
   <!--     <element-citation publication-type="software"> Tests          -->
   <include href="element-citation-software.sch"/>  
