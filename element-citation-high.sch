@@ -58,7 +58,7 @@
 
       High-6: Each <element-citation> element must have a @publication-type 
         attribute, which may only take the values 'journal', 'book', 'data', 
-        'patent', 'clinicaltrial', 'software', 'preprint', 'web', 
+        'patent', 'clinicaltrial' [REMOVED], 'software', 'preprint', 'web', 
         'periodical', 'report', 'confproc', and 'thesis'.  
 
 -->
@@ -275,7 +275,6 @@
                     @publication-type = 'book'    or
                     @publication-type = 'data'    or
                     @publication-type = 'patent'    or
-                    @publication-type = 'clinicaltrial' or
                     @publication-type = 'software'    or
                     @publication-type = 'preprint' or
                     @publication-type = 'web'    or
@@ -286,7 +285,7 @@
               role="error" 
               id="err-elem-cit-high-6-2">[err-elem-cit-high-6-2]
         The publication-type attribute may only take the values 'journal', 'book', 'data', 
-        'patent', 'clinicaltrial', 'software', 'preprint', 'web', 
+        'patent', 'software', 'preprint', 'web', 
         'periodical', 'report', 'confproc', or 'thesis'. 
         Reference '<xsl:value-of select="../@id"/>' has the publication-type 
         '<xsl:value-of select="@publication-type"/>'.</assert>
