@@ -90,82 +90,82 @@
       id="err-elem-cit-journal-2-1">[err-elem-cit-journal-2-1]
       Each  &lt;element-citation> of type 'journal' must contain one and
       only one &lt;person-group> element.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(person-group)"/> &lt;person-group> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(person-group)"/> &lt;person-group> elements.</assert>
     
     <assert test="person-group[@person-group-type='author']"
       role="error" 
       id="err-elem-cit-journal-2-2">[err-elem-cit-journal-2-2]
       Each  &lt;element-citation> of type 'journal' must contain one &lt;person-group> 
       with the attribute person-group-type 'author'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a  &lt;person-group> type of 
-      '<xsl:value-of select="person-group/@person-group-type"/>'.</assert> 
+      Reference '<value-of select="ancestor::ref/@id"/>' has a  &lt;person-group> type of 
+      '<value-of select="person-group/@person-group-type"/>'.</assert> 
 
       <assert test="count(article-title)=1"
         role="error" 
         id="err-elem-cit-journal-3-1">[err-elem-cit-journal-3-1]
         Each  &lt;element-citation> of type 'journal' must contain one and
         only one &lt;article-title> element.
-        Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-        <xsl:value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
+        Reference '<value-of select="ancestor::ref/@id"/>' has 
+        <value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
     
     <assert test="count(source)=1"
       role="error" 
       id="err-elem-cit-journal-4-1">[err-elem-cit-journal-4-1]
       Each  &lt;element-citation> of type 'journal' must contain one and
       only one &lt;source> element.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(source)"/> &lt;source> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(source)"/> &lt;source> elements.</assert>
     
     <assert test="count(source)=1 and (source/string-length() + sum(descendant::source/*/string-length()) ge 2)"
       role="error" 
       id="err-elem-cit-journal-4-2-1">[err-elem-cit-journal-4-2-1]
       A  &lt;source> element within a &lt;element-citation> of type 'journal' must contain 
       at least two characters.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
     
     <assert test="count(source)=1 and count(source/*)=0"
       role="error" 
       id="err-elem-cit-journal-4-2-2">[err-elem-cit-journal-4-2-2]
       A  &lt;source> element within a &lt;element-citation> of type 'journal' may not contain child 
       elements.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
     
     <assert test="count(volume) le 1"
       role="error" 
       id="err-elem-cit-journal-5-1-3">[err-elem-cit-journal-5-1-3]
       There may be no more than one  &lt;volume> element within a &lt;element-citation> of type 'journal'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(volume)"/>
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(volume)"/>
       &lt;volume> elements.</assert>
     
     <assert test="(count(fpage) eq 1) or (count(elocation-id) eq 1) or (count(comment/text()='In press') eq 1)"
       role="warning" 
       id="warning-elem-cit-journal-6-1">[warning-elem-cit-journal-6-1]
       One of &lt;fpage>, &lt;elocation-id>, or &lt;comment>In press&lt;/comment> should be present. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has missing page or elocation information.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has missing page or elocation information.</assert>
     
     <report test="lpage and not(fpage)"
       role="error" 
       id="err-elem-cit-journal-6-5-1">[err-elem-cit-journal-6-5-1]
       &lt;lpage> is only allowed if &lt;fpage> is present. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> but no &lt;fpage>.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has &lt;lpage> but no &lt;fpage>.</report>
     
     <report test="lpage and (number(fpage[1]) >= number(lpage[1]))"
       role="error" 
       id="err-elem-cit-journal-6-5-2">[err-elem-cit-journal-6-5-2]
       &lt;lpage> must be larger than &lt;fpage>, if present. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has first page &lt;fpage> = '<xsl:value-of select="fpage"/>' 
-      but last page &lt;lpage> = '<xsl:value-of select="lpage"/>'.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has first page &lt;fpage> = '<value-of select="fpage"/>' 
+      but last page &lt;lpage> = '<value-of select="lpage"/>'.</report>
     
     <report test="count(fpage) gt 1 or count(lpage) gt 1 or count(elocation-id) gt 1 or count(comment) gt 1"
       role="error" 
       id="err-elem-cit-journal-6-7">[err-elem-cit-journal-6-7]
       The following elements may not occur more than once in an &lt;element-citation>: &lt;fpage>, &lt;lpage>, 
       &lt;elocation-id>, and &lt;comment>In press&lt;/comment>. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(fpage)"/> &lt;fpage>, <xsl:value-of select="count(lpage)"/> &lt;lpage>,
-      <xsl:value-of select="count(elocation-id)"/> &lt;elocation-id>, and 
-      <xsl:value-of select="count(comment)"/> &lt;comment> elements.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(fpage)"/> &lt;fpage>, <value-of select="count(lpage)"/> &lt;lpage>,
+      <value-of select="count(elocation-id)"/> &lt;elocation-id>, and 
+      <value-of select="count(comment)"/> &lt;comment> elements.</report>
     
     <assert test="count(*) = count(person-group| year| article-title| source| volume| fpage| lpage| elocation-id| comment| pub-id)"
       role="error" 
@@ -173,7 +173,7 @@
       The only elements allowed as children of &lt;element-citation> with the publication-type="journal" are:
         &lt;person-group>, &lt;year>, &lt;article-title>, &lt;source>, &lt;volume>, &lt;fpage>, &lt;lpage>, 
         &lt;elocation-id>, &lt;comment>, and &lt;pub-id>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has other elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has other elements.</assert>
 
   </rule>
   
@@ -184,7 +184,7 @@
       id="err-elem-cit-journal-3-2">[err-elem-cit-journal-3-2]
       An &lt;article-title> element in a reference may contain characters and &lt;italic>, &lt;sub>, and &lt;sup>. 
       No other elements are allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
     
   </rule>
 
@@ -194,7 +194,7 @@
     id="err-elem-cit-journal-5-1-2">[err-elem-cit-journal-5-1-2]
     A  &lt;volume> element within a &lt;element-citation> of type 'journal' must contain 
     at least one character and may not contain child elements.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters and/or
+    Reference '<value-of select="ancestor::ref/@id"/>' has too few characters and/or
     child elements.</assert>
   </rule>
   
@@ -204,14 +204,14 @@
       role="error" 
       id="err-elem-cit-journal-6-2">[err-elem-cit-journal-6-2]
       If &lt;fpage> is present, neither &lt;elocation-id> nor &lt;comment>In press&lt;/comment> may be present. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;fpage> and one of those elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has &lt;fpage> and one of those elements.</assert>
     
     <assert test="matches(normalize-space(.),'^\d.*') or (substring(normalize-space(../lpage[1]),1,1) = substring(normalize-space(.),1,1)) or count(../lpage) eq 0"
       role="error" 
       id="err-elem-cit-journal-6-6">[err-elem-cit-journal-6-6]
       If the content of &lt;fpage> begins with a letter, then the content of  &lt;lpage> must begin with 
       the same letter. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not.</assert>
     
   </rule>
   
@@ -221,7 +221,7 @@
       role="error" 
       id="err-elem-cit-journal-6-3">[err-elem-cit-journal-6-3]
       If &lt;elocation-id> is present, neither &lt;fpage> nor &lt;comment>In press&lt;/comment> may be present. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;elocation-id> and one of those elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has &lt;elocation-id> and one of those elements.</assert>
     
   </rule>
   
@@ -231,13 +231,13 @@
       role="error" 
       id="err-elem-cit-journal-6-4">[err-elem-cit-journal-6-4]
       If &lt;comment>In press&lt;/comment> is present, neither &lt;fpage> nor &lt;elocation-id> may be present. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has one of those elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has one of those elements.</assert>
     
     <assert test="text() = 'In press'"
       role="error" 
       id="err-elem-cit-journal-13">[err-elem-cit-journal-13] 
       Comment elements with content other than 'In press' are not allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has such a &lt;comment> element.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has such a &lt;comment> element.</assert>
     
   </rule>
   
@@ -247,8 +247,8 @@
       role="error" 
       id="err-elem-cit-journal-10">[err-elem-cit-journal-10]
       If &lt;pub-id pub-id-type="pmid"> is present, the content must be all numeric.
-      The content of &lt;pub-id pub-id-type="pmid"> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      is <xsl:value-of select="."/>.</report>
+      The content of &lt;pub-id pub-id-type="pmid"> in Reference '<value-of select="ancestor::ref/@id"/>' 
+      is <value-of select="."/>.</report>
     
   </rule>
   
@@ -258,8 +258,8 @@
       role="error" 
       id="err-elem-cit-journal-9-1">[err-elem-cit-journal-9-1]
       Each &lt;pub-id>, if present in a journal reference, must have a @pub-id-type of either "doi" or "pmid".
-      The pub-id-type attribute on &lt;pub-id> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      is <xsl:value-of select="@pub-id-type"/>.</assert>
+      The pub-id-type attribute on &lt;pub-id> in Reference '<value-of select="ancestor::ref/@id"/>' 
+      is <value-of select="@pub-id-type"/>.</assert>
     
   </rule>
   

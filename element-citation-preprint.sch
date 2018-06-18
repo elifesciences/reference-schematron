@@ -67,8 +67,8 @@
       role="error" 
       id="err-elem-cit-preprint-2-1">[err-elem-cit-preprint-2-1]
       There must be one and only one person-group. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has
-      <xsl:value-of select="count(person-group)"/> &lt;person-group> 
+      Reference '<value-of select="ancestor::ref/@id"/>' has
+      <value-of select="count(person-group)"/> &lt;person-group> 
       elements.</assert>
 
       <assert test="count(article-title)=1"
@@ -76,35 +76,35 @@
         id="err-elem-cit-preprint-8-1">[err-elem-cit-preprint-8-1]
         Each  &lt;element-citation> of type 'preprint' must contain one and
         only one &lt;article-title> element.
-        Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-        <xsl:value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
+        Reference '<value-of select="ancestor::ref/@id"/>' has 
+        <value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
     
     <assert test="count(source) = 1"
       role="error" 
       id="err-elem-cit-preprint-9-1">[err-elem-cit-preprint-9-1]
       Each  &lt;element-citation> of type 'preprint' must contain one and only one &lt;source> element.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(source)"/> &lt;source> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(source)"/> &lt;source> elements.</assert>
     
     <assert test="count(pub-id) le 1"
       role="error" 
       id="err-elem-cit-preprint-10-1">[err-elem-cit-preprint-10-1]
       One &lt;pub-id> element is allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(pub-id)"/> &lt;pub-id> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(pub-id)"/> &lt;pub-id> elements.</assert>
     
     <assert test="count(pub-id)=1 or count(ext-link)=1"
       role="error" 
       id="err-elem-cit-preprint-10-3">[err-elem-cit-preprint-10-3]
       Either one &lt;pub-id> or one &lt;ext-link> element is required in a preprint reference.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(pub-id)"/> &lt;pub-id> elements
-      and <xsl:value-of select="count(ext-link)"/> &lt;ext-link> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(pub-id)"/> &lt;pub-id> elements
+      and <value-of select="count(ext-link)"/> &lt;ext-link> elements.</assert>
 
     <assert test="count(*) = count(person-group| article-title| source| year| pub-id| ext-link)"
       role="error" 
       id="err-elem-cit-preprint-13">[err-elem-cit-preprint-13]
       The only tags that are allowed as children of &lt;element-citation> with the publication-type="preprint" are:
       &lt;person-group>, &lt;article-title>, &lt;source>, &lt;year>, &lt;pub-id>, and &lt;ext-link>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has other elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has other elements.</assert>
 
   </rule>
   
@@ -114,7 +114,7 @@
       role="error" 
       id="err-elem-cit-preprint-2-2">[err-elem-cit-preprint-2-2]
       The &lt;person-group> element must contain @person-group-type='author'. The &lt;person-group> element in 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' contains @person-group-type='<xsl:value-of select="@person-group-type"/>'.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' contains @person-group-type='<value-of select="@person-group-type"/>'.</assert>
     
   </rule>
   
@@ -124,8 +124,8 @@
       role="error" 
       id="err-elem-cit-preprint-10-2">[err-elem-cit-preprint-10-2]
       If present, the &lt;pub-id> element must contain @pub-id-type='doi'.
-      The &lt;pub-id> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>'
-      contains @pub-id-type='<xsl:value-of select="@pub-id-type"/>'.</assert>
+      The &lt;pub-id> element in Reference '<value-of select="ancestor::ref/@id"/>'
+      contains @pub-id-type='<value-of select="@pub-id-type"/>'.</assert>
     
   </rule>
 
@@ -135,21 +135,21 @@
       role="error" 
       id="err-elem-cit-preprint-11-1">[err-elem-cit-preprint-11-1]
       Each &lt;ext-link> element must contain @xlink:href.
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</assert>
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' does not.</assert>
     
     <assert test="starts-with(@xlink:href, 'http://') or starts-with(@xlink:href, 'https://')"
       role="error" 
       id="err-elem-cit-preprint-11-2">[err-elem-cit-preprint-11-2]
       The value of @xlink:href must start with either "http://" or "https://". 
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      is '<xsl:value-of select="@xlink:href"/>', which does not.</assert>  
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
+      is '<value-of select="@xlink:href"/>', which does not.</assert>  
     
     <assert test="normalize-space(@xlink:href)=normalize-space(.)"
       role="error" 
       id="err-elem-cit-preprint-11-3">[err-elem-cit-preprint-11-3]
       The value of @xlink:href must be the same as the element content of &lt;ext-link>.
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      has @xlink:href='<xsl:value-of select="@xlink:href"/>' and content '<xsl:value-of select="."/>'.</assert>
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
+      has @xlink:href='<value-of select="@xlink:href"/>' and content '<value-of select="."/>'.</assert>
     
   </rule>
   
@@ -159,14 +159,14 @@
     id="err-elem-cit-preprint-8-2-1">[err-elem-cit-preprint-8-2-1]
     A &lt;article-title> element within a &lt;element-citation> of type 'preprint' must contain 
     at least two characters.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
+    Reference '<value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
   
   <assert test="count(*)=count(italic | sub | sup)"
     role="error" 
     id="err-elem-cit-preprint-8-2-2">[err-elem-cit-preprint-8-2-2]
     A &lt;article-title> element within a &lt;element-citation> of type 'preprint' may only contain the child 
     elements&lt;italic>, &lt;sub>, and &lt;sup>. No other elements are allowed.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
+    Reference '<value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
   </rule>
   
   <rule context="element-citation[@publication-type='preprint']/source" id="elem-citation-preprint-source"> 
@@ -175,14 +175,14 @@
       id="err-elem-cit-preprint-9-2-1">[err-elem-cit-preprint-9-2-1]
       A &lt;source> element within a &lt;element-citation> of type 'preprint' must contain 
       at least two characters.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
     
     <assert test="count(*)=count(italic | sub | sup)"
       role="error" 
       id="err-elem-cit-preprint-9-2-2">[err-elem-cit-preprint-9-2-2]
       A &lt;source> element within a &lt;element-citation> of type 'preprint' may only contain the child 
       elements&lt;italic>, &lt;sub>, and &lt;sup>. No other elements are allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
     
   </rule>
   

@@ -42,7 +42,7 @@
       role="warning" 
       id="warning-elem-cit-report-10">[warning-elem-cit-report-10]
       There should be a &lt;publisher-loc> element within a &lt;element-citation> of type 'report'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not have one &lt;publisher-loc> element.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not have one &lt;publisher-loc> element.</assert>
 
   </rule>
 

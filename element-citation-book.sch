@@ -96,8 +96,8 @@
       role="error" 
       id="err-elem-cit-book-2-2">[err-elem-cit-book-2-2]
       The only values allowed for @person-group-type in book references are "author" and "editor".
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a &lt;person-group> type of 
-      '<xsl:value-of select="person-group/@person-group-type"/>'.</assert> 
+      Reference '<value-of select="ancestor::ref/@id"/>' has a &lt;person-group> type of 
+      '<value-of select="person-group/@person-group-type"/>'.</assert> 
     
     <assert test="count(person-group)=1 or (count(person-group/@person-group-type='author')+
       count(person-group/@person-group-type='editor')=2)"
@@ -105,36 +105,36 @@
       id="err-elem-cit-book-2-3">[err-elem-cit-book-2-3]
       In a book reference, there should be a single person-group element (either author or editor) or
       one person-group with @person-group-type="author" and one person-group with @person-group-type=editor.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(person-group)"/> &lt;person-group> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(person-group)"/> &lt;person-group> elements.</assert>
     
     <assert test="count(source)=1"
       role="error" 
       id="err-elem-cit-book-10-1">[err-elem-book-book-10-1]
       Each  &lt;element-citation> of type 'book' must contain one and
       only one &lt;source> element.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(source)"/> &lt;source> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(source)"/> &lt;source> elements.</assert>
     
     <assert test="count(source)=1 and (source/string-length() + sum(descendant::source/*/string-length()) ge 2)"
       role="error" 
       id="err-elem-cit-book-10-2-1">[err-elem-cit-book-10-2-1]
       A  &lt;source> element within a &lt;element-citation> of type 'book' must contain 
       at least two characters.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
     
     <assert test="count(source)=1 and count(source/*)=count(source/(italic | sub | sup))"
       role="error" 
       id="err-elem-cit-book-10-2-2">[err-elem-cit-book-10-2-2]
       A  &lt;source> element within a &lt;element-citation> of type 'book' may only contain the child 
       elements&lt;italic>, &lt;sub>, and &lt;sup>. No other elements are allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has child elements that are not allowed.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has child elements that are not allowed.</assert>
     
     <assert test="count(publisher-name)=1"
       role="error" 
       id="err-elem-cit-book-13-1">[err-elem-cit-book-13-1]
       One and only one &lt;publisher-name> is required in a book reference.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(publisher-name)"/>
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(publisher-name)"/>
       &lt;publisher-name> elements.</assert>
     
     <report test="some $p in document($publisher-locations)/locations/location/text()
@@ -142,34 +142,34 @@
       role="warning" 
       id="warning-elem-cit-book-13-3">[warning-elem-cit-book-13-3]
       The content of &lt;publisher-name> may not end with a publisher location. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' contains the string <xsl:value-of select="publisher-name"/>,
+      Reference '<value-of select="ancestor::ref/@id"/>' contains the string <value-of select="publisher-name"/>,
       which ends with a publisher location.</report>
     
     <report test="(lpage or fpage) and not(chapter-title)"
       role="error" 
       id="err-elem-cit-book-16">[err-elem-cit-book-16]
       In a book reference, &lt;lpage> and &lt;fpage> are allowed only if &lt;chapter-title> is present. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> or &lt;fpage> but no &lt;chapter-title>.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has &lt;lpage> or &lt;fpage> but no &lt;chapter-title>.</report>
     
     <report test="(lpage and fpage) and (fpage ge lpage[1])"
       role="error" 
       id="err-elem-cit-book-36">[err-elem-cit-book-36-1]
       If both &lt;lpage> and &lt;fpage> are present, the value of &lt;fpage> must be less than the value of &lt;lpage>. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> <xsl:value-of select="lpage"/>, which is 
-      less than or equal to &lt;fpage> <xsl:value-of select="fpage"/>.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has &lt;lpage> <value-of select="lpage"/>, which is 
+      less than or equal to &lt;fpage> <value-of select="fpage"/>.</report>
     
     <report test="lpage and not (fpage)"
       role="error" 
       id="err-elem-cit-book-36-2">[err-elem-cit-book-36-2]
       If &lt;lpage> is present, &lt;fpage> must also be present. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;lpage> but not &lt;fpage>.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has &lt;lpage> but not &lt;fpage>.</report>
     
     <report test="count(lpage) > 1 or count(fpage) > 1"
       role="error" 
       id="err-elem-cit-book-36-6">[err-elem-cit-book-36-6]
       At most one &lt;lpage> and one &lt;fpage> are allowed. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(lpage)"/> &lt;lpage> 
-      elements and <xsl:value-of select="count(fpage)"/> &lt;fpage> elements.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(lpage)"/> &lt;lpage> 
+      elements and <value-of select="count(fpage)"/> &lt;fpage> elements.</report>
     
     <assert test="count(*) = count(person-group| year| source| chapter-title| publisher-loc|publisher-name|volume| 
       edition| fpage| lpage| pub-id)"
@@ -178,7 +178,7 @@
       The only tags that are allowed as children of &lt;element-citation> with the publication-type="book" are:
       &lt;person-group>, &lt;year>, &lt;source>, &lt;chapter-title>, &lt;publisher-loc>, &lt;publisher-name>, 
       &lt;volume>, &lt;edition>, &lt;fpage>, &lt;lpage>, and &lt;pub-id>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has other elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has other elements.</assert>
 
   </rule>
   
@@ -187,7 +187,7 @@
       role="error" 
       id="err-elem-cit-book-2-1">[err-elem-cit-book-2-1]
       Each &lt;person-group> must have a @person-group-type attribute.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a &lt;person-group> 
+      Reference '<value-of select="ancestor::ref/@id"/>' has a &lt;person-group> 
       element with no @person-group-type attribute.</assert>
   </rule>
   
@@ -197,20 +197,20 @@
       role="error" 
       id="err-elem-cit-book-22">[err-elem-cit-book-22]
       If there is a &lt;chapter-title> element there must be one and only one &lt;person-group person-group-type="author">.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
       
     <assert test="count(../person-group[@person-group-type='editor']) le 1"
       role="error" 
       id="err-elem-cit-book-28-1">[err-elem-cit-book-28-1]
       If there is a &lt;chapter-title> element there may be a maximum of one &lt;person-group person-group-type="editor">.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
     
     <assert test="count(*) = count(sub|sup|italic)"
       role="error" 
       id="err-elem-cit-book-31">[err-elem-cit-book-31]
       A &lt;chapter-title> element in a reference may contain characters and &lt;italic>, &lt;sub>, and &lt;sup>. 
       No other elements are allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
     
   </rule>
   
@@ -220,7 +220,7 @@
       role="error" 
       id="err-elem-cit-book-13-2">[err-elem-cit-book-13-2]
       No elements are allowed inside &lt;publisher-name>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has child elements within the
+      Reference '<value-of select="ancestor::ref/@id"/>' has child elements within the
       &lt;publisher-name> element.</assert>
     
   </rule>
@@ -231,7 +231,7 @@
       role="error" 
       id="err-elem-cit-book-15">[err-elem-cit-book-15]
       No elements are allowed inside &lt;edition>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has child elements within the
+      Reference '<value-of select="ancestor::ref/@id"/>' has child elements within the
       &lt;edition> element.</assert>
     
   </rule>
@@ -242,8 +242,8 @@
       role="error" 
       id="err-elem-cit-book-18">[err-elem-cit-book-18]
       If &lt;pub-id pub-id-type="pmid"> is present, the content must be all numeric. The content of 
-      &lt;pub-id pub-id-type="pmid"> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      is <xsl:value-of select="."/>.</report>
+      &lt;pub-id pub-id-type="pmid"> in Reference '<value-of select="ancestor::ref/@id"/>' 
+      is <value-of select="."/>.</report>
     
   </rule>
   
@@ -253,8 +253,8 @@
       role="error" 
       id="err-elem-cit-book-17">[err-elem-cit-book-17]
       Each &lt;pub-id>, if present in a book reference, must have a @pub-id-type of one of these values: doi, pmid, isbn. 
-      The pub-id-type attribute on &lt;pub-id> in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      is <xsl:value-of select="@pub-id-type"/>.</assert>
+      The pub-id-type attribute on &lt;pub-id> in Reference '<value-of select="ancestor::ref/@id"/>' 
+      is <value-of select="@pub-id-type"/>.</assert>
     
   </rule>
 

@@ -77,43 +77,43 @@
       role="error" 
       id="err-elem-cit-thesis-2-1">[err-elem-cit-thesis-2-1]
       One and only one person-group element is allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(person-group)"/> &lt;person-group> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(person-group)"/> &lt;person-group> elements.</assert>
     
     <assert test="count(collab)=0"
       role="error" 
       id="err-elem-cit-thesis-3">[err-elem-cit-thesis-3]
       No &lt;collab> elements are allowed in thesis citations.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(collab)"/> &lt;collab> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(collab)"/> &lt;collab> elements.</assert>
     
     <assert test="count(etal)=0"
       role="error" 
       id="err-elem-cit-thesis-6">[err-elem-cit-thesis-6]
       No &lt;etal> elements are allowed in thesis citations.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(etal)"/> &lt;etal> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(etal)"/> &lt;etal> elements.</assert>
     
     <assert test="count(article-title)=1"
       role="error" 
       id="err-elem-cit-thesis-8-1">[err-elem-cit-thesis-8-1]
       Each  &lt;element-citation> of type 'thesis' must contain one and
       only one &lt;article-title> element.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
     
     <assert test="count(publisher-name)=1"
       role="error" 
       id="err-elem-cit-thesis-9-1">[err-elem-cit-thesis-9-1]
       &lt;publisher-name> is required.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(publisher-name)"/>
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(publisher-name)"/>
       &lt;publisher-name> elements.</assert>
             
     <assert test="count(pub-id) le 1"
       role="error" 
       id="err-elem-cit-thesis-11-1">[err-elem-cit-thesis-11-1]
       A maximum of one &lt;pub-id> element is allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(pub-id)"/>
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(pub-id)"/>
       &lt;pub-id> elements.</assert>
     
     <assert test="count(*) = count(person-group | article-title | year| source | publisher-loc | publisher-name | ext-link | pub-id)"
@@ -122,7 +122,7 @@
       The only tags that are allowed as children of &lt;element-citation> with the publication-type="thesis" are:
       &lt;person-group>, &lt;year>, &lt;article-title>, &lt;source>, &lt;publisher-loc>, &lt;publisher-name>, 
       &lt;ext-link>, and &lt;pub-id>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has other elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has other elements.</assert>
 
   </rule>
   
@@ -132,15 +132,15 @@
       role="error" 
       id="err-elem-cit-thesis-2-2">[err-elem-cit-thesis-2-2]
       Each &lt;person-group> must have a @person-group-type attribute of type 'author'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a &lt;person-group> 
-      element with @person-group-type attribute '<xsl:value-of select="@person-group-type"/>'.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has a &lt;person-group> 
+      element with @person-group-type attribute '<value-of select="@person-group-type"/>'.</assert>
     
     <assert test="count(name)=1"
       role="error" 
       id="err-elem-cit-thesis-2-3">[err-elem-cit-thesis-2-3]
       Each thesis citation must have one and only one author.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a thesis citation 
-      with <xsl:value-of select="count(name)"/> authors.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has a thesis citation 
+      with <value-of select="count(name)"/> authors.</assert>
   </rule>
   
   <rule context="element-citation[@publication-type='thesis']/article-title" id="elem-citation-thesis-article-title">
@@ -150,7 +150,7 @@
       id="err-elem-cit-thesis-8-2">[err-elem-cit-thesis-8-2]
       An &lt;article-title> element in a reference may contain characters and &lt;italic>, &lt;sub>, and &lt;sup>. 
       No other elements are allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement.</assert>
     
   </rule>
   
@@ -160,7 +160,7 @@
       role="error" 
       id="err-elem-cit-thesis-9-2">[err-elem-cit-thesis-9-2]
       No elements are allowed inside &lt;publisher-name>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has child elements within the
+      Reference '<value-of select="ancestor::ref/@id"/>' has child elements within the
       &lt;publisher-name> element.</assert>
     
   </rule>
@@ -171,7 +171,7 @@
       role="error" 
       id="err-elem-cit-thesis-10-2">[err-elem-cit-thesis-10-2]
       No elements are allowed inside &lt;publisher-loc>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has child elements within the
+      Reference '<value-of select="ancestor::ref/@id"/>' has child elements within the
       &lt;publisher-loc> element.</assert>
     
   </rule>
@@ -182,8 +182,8 @@
       role="error" 
       id="err-elem-cit-thesis-11-2">[err-elem-cit-thesis-11-2]
       The only allowed pub-id type is 'doi'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a pub-id type of 
-      '<xsl:value-of select="@pub-id-type"/>'.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has a pub-id type of 
+      '<value-of select="@pub-id-type"/>'.</assert>
     
   </rule>
   
@@ -192,22 +192,22 @@
     <assert test="@xlink:href"
       role="error" 
       id="err-elem-cit-thesis-12-1">[err-elem-cit-thesis-12-1]
-      Each &lt;ext-link> element must contain @xlink:href. The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
+      Each &lt;ext-link> element must contain @xlink:href. The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
       does not.</assert>
     
     <assert test="starts-with(@xlink:href, 'http://') or starts-with(@xlink:href, 'https://')"
       role="error" 
       id="err-elem-cit-thesis-12-2">[err-elem-cit-thesis-12-2]
       The value of @xlink:href must start with either "http://" or "https://". 
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      is '<xsl:value-of select="@xlink:href"/>', which does not.</assert>  
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
+      is '<value-of select="@xlink:href"/>', which does not.</assert>  
     
     <assert test="normalize-space(@xlink:href)=normalize-space(.)"
       role="error" 
       id="err-elem-cit-thesis-12-3">[err-elem-cit-thesis-12-3]
       The value of @xlink:href must be the same as the element content of &lt;ext-link>.
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      has @xlink:href='<xsl:value-of select="@xlink:href"/>' and content '<xsl:value-of select="."/>'.</assert>
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
+      has @xlink:href='<value-of select="@xlink:href"/>' and content '<value-of select="."/>'.</assert>
     
   </rule>
 

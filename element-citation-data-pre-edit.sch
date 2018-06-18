@@ -46,7 +46,7 @@
       role="warning" 
       id="warning-elem-cit-data-2-1">[warning-elem-cit-data-2-1]
       There should be at least one &lt;person-group> element.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has none.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has none.</assert>
     
     <assert test="source"
       role="warning" 
@@ -60,8 +60,8 @@
     role="warning" 
     id="warning-elem-cit-data-2-2">[warning-elem-cit-data-2-2]
     The only valid @person-group-type values are author,compiler, curator.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a &lt;person-group> element with type
-    '<xsl:value-of select="@person-group-type"/>'.</assert>
+    Reference '<value-of select="ancestor::ref/@id"/>' has a &lt;person-group> element with type
+    '<value-of select="@person-group-type"/>'.</assert>
   </rule>
 </pattern>
 

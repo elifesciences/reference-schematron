@@ -51,32 +51,32 @@
       role="warning" 
       id="warning-elem-cit-book-12">[warning-elem-cit-book-12]
       There should be a &lt;publisher-loc> element within a &lt;element-citation> of type 'book'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not have one &lt;publisher-loc> element.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not have one &lt;publisher-loc> element.</assert>
     
     <report test="chapter-title and not(person-group[@person-group-type='editor'])"
       role="warning" 
       id="warning-elem-cit-book-28">[warning-elem-cit-book-28]
       If &lt;chapter-title> is present, there should be a &lt;person-group> element of type 'editor' present.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;chapter-title> but no &lt;person-group> of type 'editor'.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has &lt;chapter-title> but no &lt;person-group> of type 'editor'.</report>
     
     <report test="chapter-title and not(lpage) and not(fpage)"
       role="warning" 
       id="warning-elem-cit-book-36-3">[warning-elem-cit-book-36-3]
       If &lt;chapter-title> is present, &lt;fpage> and &lt;lpage> should also be present.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' is missing &lt;fpage>, &lt;lpage>, or both.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' is missing &lt;fpage>, &lt;lpage>, or both.</report>
     
     <report test="fpage and not(lpage)"
       role="warning" 
       id="warning-elem-cit-book-36-4">[warning-elem-cit-book-36-4]
       If &lt;fpage> is present, &lt;lpage> should also be present.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not have an &lt;lpage> element.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not have an &lt;lpage> element.</report>
     
    <!-- <report test="matches(fpage,'\D') or matches(lpage, '\D')"
       role="warning" 
       id="warning-elem-cit-book-36-5">[warning-elem-cit-book-36-5]
       The content of both &lt;fpage> and &lt;lpage> should be all numeric.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      &lt;fpage>: <xsl:value-of select="fpage"/> and &lt;lpage>: <xsl:value-of select="lpage"/>.</report>-->
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      &lt;fpage>: <value-of select="fpage"/> and &lt;lpage>: <value-of select="lpage"/>.</report>-->
 
   </rule>
 
