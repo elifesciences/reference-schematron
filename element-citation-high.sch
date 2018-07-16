@@ -65,8 +65,7 @@
 
 <pattern 
    id="element-citation-high-tests"
-   xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   xmlns="http://purl.oclc.org/dsdl/schematron">
 
 <title>High-level Tests for 'element-citation'</title>
   

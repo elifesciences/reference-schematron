@@ -32,8 +32,7 @@
 
 <pattern
    id="element-citation-general-pre-edit-tests"
-   xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   xmlns="http://purl.oclc.org/dsdl/schematron">
 
 <title>element-citation General Pre-edit Tests</title>
         

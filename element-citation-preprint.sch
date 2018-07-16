@@ -56,7 +56,6 @@
 <pattern
    id="element-citation-preprint-tests"
    xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <title>element-citation publication-type="preprint" Tests</title>

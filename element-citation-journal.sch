@@ -78,8 +78,7 @@
 
 <pattern
    id="element-citation-journal-tests"
-   xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   xmlns="http://purl.oclc.org/dsdl/schematron">
 
 <title>element-citation publication-type="journal" Tests</title>
              
