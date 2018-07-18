@@ -65,8 +65,7 @@
 
 <pattern 
    id="element-citation-high-tests"
-   xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   xmlns="http://purl.oclc.org/dsdl/schematron">
 
 <title>High-level Tests for 'element-citation'</title>
   
@@ -94,7 +93,7 @@
       id="err-elem-cit-high-1">[err-elem-cit-high-1]
       The only element that is allowed as a child of &lt;ref> is
       &lt;element-citation>. 
-      Reference '<xsl:value-of select="@id"/>' has other elements.
+      Reference '<value-of select="@id"/>' has other elements.
     </assert>
     
     <!-- else:
@@ -121,7 +120,7 @@
       by the first author’s surname, or by the value of the first &lt;collab> element. In the case of
       two authors, the sequence should be arranged by both authors' surnames, then date. For
       three or more authors, the sequence should be the first author's surname, then date.
-      Reference '<xsl:value-of select="@id"/>' appears to be in a different order.
+      Reference '<value-of select="@id"/>' appears to be in a different order.
     </assert>
  
     <assert test="@id"
@@ -135,8 +134,8 @@
       id="err-elem-cit-high-3-2">[err-elem-cit-high-3-2]
       Each &lt;ref> element must have an @id attribute that starts with 'bib' and ends with 
       a number. 
-      Reference '<xsl:value-of select="@id"/>' has the value 
-      '<xsl:value-of select="@id"/>', which is incorrect.
+      Reference '<value-of select="@id"/>' has the value 
+      '<value-of select="@id"/>', which is incorrect.
     </assert>
     
     <assert test="count(preceding-sibling::ref)=0 or number(substring(@id,4)) gt number(substring(preceding-sibling::ref[1]/@id,4))"
@@ -144,8 +143,8 @@
       id="err-elem-cit-high-3-3">[err-elem-cit-high-3-3]
       The sequence of ids in the &lt;ref> elements must increase monotonically
       (e.g. 1,2,3,4,5, . . . ,50,51,52,53, . . . etc).
-      Reference '<xsl:value-of select="@id"/>' has the value 
-      '<xsl:value-of select="@id"/>', which does not fit this pattern.
+      Reference '<value-of select="@id"/>' has the value 
+      '<value-of select="@id"/>', which does not fit this pattern.
     </assert>
     
     <let name="year-comma" value="', \d{4}\w?$'"/>
@@ -208,7 +207,7 @@
       )"
       role="error"
       id="err-elem-cit-high-4">
-      <xsl:value-of select="$name"/> and  <xsl:value-of select="$name2"/> 
+      <value-of select="$name"/> and  <value-of select="$name2"/> 
       [err-elem-cit-high-4]
       <!--     <let name="name" value="lower-case(if (local-name(element-citation/person-group[1]/*[1])='name')
       then (element-citation/person-group[1]/name[1]/surname)
@@ -227,9 +226,9 @@
       point to that reference must contain the content of only the first 
       of the &lt;surname>s, followed by the text "et al."
       All of these are followed by ', ' and the year, or by the year in parentheses.
-      There are <xsl:value-of select="count(//xref[@rid=current()/@id]/@rid)"/> &lt;xref> references 
-      with @rid = <xsl:value-of select="@id"/> to be checked. The first name should be 
-      '<xsl:value-of select="element-citation/person-group[1]/(name[1]/surname | collab[1])[1]"/>'.
+      There are <value-of select="count(//xref[@rid=current()/@id]/@rid)"/> &lt;xref> references 
+      with @rid = <value-of select="@id"/> to be checked. The first name should be 
+      '<value-of select="element-citation/person-group[1]/(name[1]/surname | collab[1])[1]"/>'.
     </assert>
     
       <!-- If there is more than one year (caught by a different test), use the first year to compare. -->
@@ -241,10 +240,10 @@
       All xrefs to &lt;ref>s, which contain &lt;element-citation>s, should contain, as the last part 
       of their content, the string ", " followed by the content of the year element in the 
       &lt;element-citation>, or the year in parentheses. 
-      There is an incorrect &lt;xref> with @rid <xsl:value-of select="@id"/>. It should contain the string 
-      ', <xsl:value-of select="element-citation/year"/>' or the string 
-      '(<xsl:value-of select="element-citation/year"/>)' but does not.
-      There are <xsl:value-of select="count(//xref[@rid=current()/@id]/@rid)"/> references to be checked.
+      There is an incorrect &lt;xref> with @rid <value-of select="@id"/>. It should contain the string 
+      ', <value-of select="element-citation/year"/>' or the string 
+      '(<value-of select="element-citation/year"/>)' but does not.
+      There are <value-of select="count(//xref[@rid=current()/@id]/@rid)"/> references to be checked.
     </assert>
     
   </rule>
@@ -257,7 +256,7 @@
       role="error" 
       id="err-xref-high-2-1">[err-xref-high-2-1]
       Citations in the text to references with the same author(s) in the same year must be arranged in the same 
-      order as the reference list. The xref with the value '<xsl:value-of select="."/>' is in the wrong order in the 
+      order as the reference list. The xref with the value '<value-of select="."/>' is in the wrong order in the 
       text. Check all the references to citations for the same authors to determine which need to be changed.
     </assert>
     
@@ -268,7 +267,7 @@
   <assert test="@publication-type" role="error" 
     id="err-elem-cit-high-6-1">[err-elem-cit-high-6-1]
     The element-citation element must have a publication-type attribute.
-    Reference '<xsl:value-of select="../@id"/>' does not.
+    Reference '<value-of select="../@id"/>' does not.
   </assert>
 
       <assert test="@publication-type = 'journal' or
@@ -287,8 +286,8 @@
         The publication-type attribute may only take the values 'journal', 'book', 'data', 
         'patent', 'software', 'preprint', 'web', 
         'periodical', 'report', 'confproc', or 'thesis'. 
-        Reference '<xsl:value-of select="../@id"/>' has the publication-type 
-        '<xsl:value-of select="@publication-type"/>'.</assert>
+        Reference '<value-of select="../@id"/>' has the publication-type 
+        '<value-of select="@publication-type"/>'.</assert>
 
   </rule>
 

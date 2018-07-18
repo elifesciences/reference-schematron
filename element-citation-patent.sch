@@ -56,7 +56,6 @@
 <pattern
    id="element-citation-patent-tests"
    xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <title>element-citation publication-type="patent" Tests</title>
@@ -67,8 +66,8 @@
       role="error" 
       id="err-elem-cit-patent-2-1">[err-elem-cit-patent-2-1]
       There must be one person-group with @person-group-type="inventor". 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has
-      <xsl:value-of select="count(person-group[@person-group-type='inventor'])"/> &lt;person-group> 
+      Reference '<value-of select="ancestor::ref/@id"/>' has
+      <value-of select="count(person-group[@person-group-type='inventor'])"/> &lt;person-group> 
       elements of type 'inventor'.</assert>
     
     <assert test="every $type in person-group/@person-group-type
@@ -76,14 +75,14 @@
       role="error" 
       id="err-elem-cit-patent-2-3">[err-elem-cit-patent-2-3]
       The only allowed types of person-group elements are "assignee" and "inventor".
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has &lt;person-group> elements of other types.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has &lt;person-group> elements of other types.</assert>
     
     <assert test="count(person-group[@person-group-type='assignee']) le 1"
       role="error" 
       id="err-elem-cit-patent-2A">[err-elem-cit-patent-2A]
       There may be zero or one person-group elements with @person-group-type="assignee" 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(person-group[@person-group-type='assignee'])"/> &lt;person-group> elements of type
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(person-group[@person-group-type='assignee'])"/> &lt;person-group> elements of type
       'assignee'.</assert>
 
       <assert test="count(article-title)=1"
@@ -91,34 +90,34 @@
         id="err-elem-cit-patent-8-1">[err-elem-cit-patent-8-1]
         Each  &lt;element-citation> of type 'patent' must contain one and
         only one &lt;article-title> element.
-        Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-        <xsl:value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
+        Reference '<value-of select="ancestor::ref/@id"/>' has 
+        <value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
     
     <assert test="count(source) le 1"
       role="error" 
       id="err-elem-cit-patent-9-1">[err-elem-cit-patent-9-1]
       Each  &lt;element-citation> of type 'patent' may contain zero or one &lt;source> elements.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(source)"/> &lt;source> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(source)"/> &lt;source> elements.</assert>
     
     <assert test="patent"
       role="error" 
       id="err-elem-cit-patent-10-1-1">[err-elem-cit-patent-10-1-1]
       The  &lt;patent> element is required. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has no &lt;patent> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has no &lt;patent> elements.</assert>
     
     <assert test="ext-link"
       role="error" 
       id="err-elem-cit-patent-11-1">[err-elem-cit-patent-11-1]
       The &lt;ext-link> element is required.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has no &lt;ext-link> elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has no &lt;ext-link> elements.</assert>
 
     <assert test="count(*) = count(person-group| article-title| source| year| patent| ext-link)"
       role="error" 
       id="err-elem-cit-patent-18">[err-elem-cit-patent-18]
       The only tags that are allowed as children of &lt;element-citation> with the publication-type="patent" are:
       &lt;person-group>, &lt;article-title>, &lt;source>, &lt;year>, &lt;patent>, and &lt;ext-link>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has other elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has other elements.</assert>
 
   </rule>
 
@@ -127,22 +126,22 @@
     <assert test="@xlink:href"
       role="error" 
       id="err-elem-cit-patent-11-2">[err-elem-cit-patent-11-2]
-      Each &lt;ext-link> element must contain @xlink:href. The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
+      Each &lt;ext-link> element must contain @xlink:href. The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
       does not.</assert>
     
     <assert test="starts-with(@xlink:href, 'http://') or starts-with(@xlink:href, 'https://')"
       role="error" 
       id="err-elem-cit-patent-11-3">[err-elem-cit-patent-11-3]
       The value of @xlink:href must start with either "http://" or "https://". 
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      is '<xsl:value-of select="@xlink:href"/>', which does not.</assert>  
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
+      is '<value-of select="@xlink:href"/>', which does not.</assert>  
     
     <assert test="normalize-space(@xlink:href)=normalize-space(.)"
       role="error" 
       id="err-elem-cit-patent-11-4">[err-elem-cit-patent-11-4]
       The value of @xlink:href must be the same as the element content of &lt;ext-link>.
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      has @xlink:href='<xsl:value-of select="@xlink:href"/>' and content '<xsl:value-of select="."/>'.</assert>
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
+      has @xlink:href='<value-of select="@xlink:href"/>' and content '<value-of select="."/>'.</assert>
     
   </rule>
   
@@ -152,7 +151,7 @@
     id="err-elem-cit-patent-8-2-1">[err-elem-cit-patent-8-2-1]
     A  &lt;article-title> element within a &lt;element-citation> of type 'patent' must contain 
     at least two characters.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
+    Reference '<value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
   
   <assert test="count(*)=count(italic | sub | sup)"
     role="error" 
@@ -160,7 +159,7 @@
     A  &lt;article-title> element within a &lt;element-citation> of type 'patent' may only contain the child 
     elements&lt;italic>, &lt;sub>, and &lt;sup>. 
     No other elements are allowed.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
+    Reference '<value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
   </rule>
   
   <rule context="element-citation[@publication-type='patent']/source" id="elem-citation-patent-source"> 
@@ -169,7 +168,7 @@
       id="err-elem-cit-patent-9-2-1">[err-elem-cit-patent-9-2-1]
       A  &lt;source> element within a &lt;element-citation> of type 'patent' must contain 
       at least two characters.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
     
     <assert test="count(*)=count(italic | sub | sup)"
       role="error" 
@@ -177,7 +176,7 @@
       A  &lt;source> element within a &lt;element-citation> of type 'patent' may only contain the child 
       elements&lt;italic>, &lt;sub>, and &lt;sup>. 
       No other elements are allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
     
   </rule>
   
@@ -188,14 +187,14 @@
       role="error" 
       id="err-elem-cit-patent-10-1-2">[err-elem-cit-patent-10-1-2]
       The  &lt;patent> element may not have child elements.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has child elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has child elements.</assert>
     
     <assert test="not(@country) or (@country = document($countries)/countries/country)"
       role="error" 
       id="err-elem-cit-patent-10-2">[err-elem-cit-patent-10-2]
       The country attribute on the &lt;patent> element is optional, but must have a value from the list if present.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has a patent/@country attribute with the value 
-      '<xsl:value-of select="@country"/>', which is not in the list.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has a patent/@country attribute with the value 
+      '<value-of select="@country"/>', which is not in the list.</assert>
 
   </rule>
 </pattern>

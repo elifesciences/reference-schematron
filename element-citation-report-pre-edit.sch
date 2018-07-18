@@ -30,8 +30,7 @@
 
 <pattern
    id="element-citation-report-pre-edit-tests"
-   xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   xmlns="http://purl.oclc.org/dsdl/schematron">
 
 <title>element-citation publication-type="report" Pre-edit Tests</title>
 
@@ -42,7 +41,7 @@
       role="warning" 
       id="warning-elem-cit-report-10">[warning-elem-cit-report-10]
       There should be a &lt;publisher-loc> element within a &lt;element-citation> of type 'report'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not have one &lt;publisher-loc> element.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not have one &lt;publisher-loc> element.</assert>
 
   </rule>
 

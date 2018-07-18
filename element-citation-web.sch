@@ -57,7 +57,6 @@
 <pattern
    id="element-citation-web-tests"
    xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <title>element-citation publication-type="web" Tests</title>
@@ -68,8 +67,8 @@
       role="error" 
       id="err-elem-cit-web-2-1">[err-elem-cit-web-2-1]
       There must be one and only one person-group. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has
-      <xsl:value-of select="count(person-group)"/> &lt;person-group> 
+      Reference '<value-of select="ancestor::ref/@id"/>' has
+      <value-of select="count(person-group)"/> &lt;person-group> 
       elements.</assert>
 
       <assert test="count(article-title)=1"
@@ -77,28 +76,28 @@
         id="err-elem-cit-web-8-1">[err-elem-cit-web-8-1]
         Each  &lt;element-citation> of type 'web' must contain one and
         only one &lt;article-title> element.
-        Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-        <xsl:value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
+        Reference '<value-of select="ancestor::ref/@id"/>' has 
+        <value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
     
     <report test="count(source) > 1"
       role="error" 
       id="err-elem-cit-web-9-1">[err-elem-cit-web-9-1]
       Each  &lt;element-citation> of type 'web' may contain one and only one &lt;source> element.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      <xsl:value-of select="count(source)"/> &lt;source> elements.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      <value-of select="count(source)"/> &lt;source> elements.</report>
     
     <assert test="count(ext-link)=1"
       role="error" 
       id="err-elem-cit-web-10-1">[err-elem-cit-web-10-1]
       One and only one &lt;ext-link> element is required.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(ext-link)"/> 
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(ext-link)"/> 
       &lt;ext-link> elements.</assert>
     
     <assert test="count(date-in-citation)=1"
       role="error" 
       id="err-elem-cit-web-11-1">[err-elem-cit-web-11-1]
       One and only one &lt;date-in-citation> element is required.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(date-in-citation)"/> 
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(date-in-citation)"/> 
       &lt;date-in-citation> elements.</assert>
 
     <assert test="count(*) = count(person-group|article-title|source|year|ext-link|date-in-citation)"
@@ -106,7 +105,7 @@
       id="err-elem-cit-web-12">[err-elem-cit-web-12]
       The only tags that are allowed as children of &lt;element-citation> with the publication-type="web" are:
       &lt;person-group>, &lt;article-title>, &lt;source>, &lt;year>, &lt;ext-link> and &lt;date-in-citation>.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has other elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has other elements.</assert>
 
   </rule>
   
@@ -116,7 +115,7 @@
       role="error" 
       id="err-elem-cit-web-2-2">[err-elem-cit-web-2-2]
       The &lt;person-group> element must contain @person-group-type='author'. The &lt;person-group> element in 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' contains @person-group-type='<xsl:value-of select="@person-group-type"/>'.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' contains @person-group-type='<value-of select="@person-group-type"/>'.</assert>
     
   </rule>
 
@@ -125,22 +124,22 @@
     <assert test="@xlink:href"
       role="error" 
       id="err-elem-cit-web-10-2">[err-elem-cit-web-10-2]
-      Each &lt;ext-link> element must contain @xlink:href. The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
+      Each &lt;ext-link> element must contain @xlink:href. The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
       does not.</assert>
     
     <assert test="starts-with(@xlink:href, 'http://') or starts-with(@xlink:href, 'https://')"
       role="error" 
       id="err-elem-cit-web-10-3">[err-elem-cit-web-10-3]
       The value of @xlink:href must start with either "http://" or "https://". 
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      is '<xsl:value-of select="@xlink:href"/>', which does not.</assert>  
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
+      is '<value-of select="@xlink:href"/>', which does not.</assert>  
     
     <assert test="normalize-space(@xlink:href)=normalize-space(.)"
       role="error" 
       id="err-elem-cit-web-10-4">[err-elem-cit-web-10-4]
       The value of @xlink:href must be the same as the element content of &lt;ext-link>.
-      The &lt;ext-link> element in Reference '<xsl:value-of select="ancestor::ref/@id"/>' 
-      has @xlink:href='<xsl:value-of select="@xlink:href"/>' and content '<xsl:value-of select="."/>'.</assert>
+      The &lt;ext-link> element in Reference '<value-of select="ancestor::ref/@id"/>' 
+      has @xlink:href='<value-of select="@xlink:href"/>' and content '<value-of select="."/>'.</assert>
     
   </rule>
   
@@ -150,7 +149,7 @@
     id="err-elem-cit-web-8-2-1">[err-elem-cit-web-8-2-1]
     A  &lt;article-title> element within a &lt;element-citation> of type 'web' must contain 
     at least two characters.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
+    Reference '<value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
   
   <assert test="count(*)=count(italic | sub | sup)"
     role="error" 
@@ -158,7 +157,7 @@
     A  &lt;article-title> element within a &lt;element-citation> of type 'web' may only contain the child 
     elements&lt;italic>, &lt;sub>, and &lt;sup>. 
     No other elements are allowed.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
+    Reference '<value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
   </rule>
   
   <rule context="element-citation[@publication-type='web']/source" id="elem-citation-web-source"> 
@@ -167,7 +166,7 @@
       id="err-elem-cit-web-9-2-1">[err-elem-cit-web-9-2-1]
       A  &lt;source> element within a &lt;element-citation> of type 'web' must contain 
       at least two characters.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has too few characters.</assert>
     
     <assert test="count(*)=count(italic | sub | sup)"
       role="error" 
@@ -175,7 +174,7 @@
       A  &lt;source> element within a &lt;element-citation> of type 'web' may only contain the child 
       elements&lt;italic>, &lt;sub>, and &lt;sup>. 
       No other elements are allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has disallowed child elements.</assert>
     
   </rule>
   
@@ -184,7 +183,7 @@
       role="error" 
       id="err-elem-cit-web-11-2-1">[err-elem-cit-web-11-2-1]
       The &lt;date-in-citation> element must have an @iso-8601-date attribute.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.
+      Reference '<value-of select="ancestor::ref/@id"/>' does not.
     </assert>
     
     <assert test="matches(./@iso-8601-date,'^\d{4}-\d{2}-\d{2}$')"
@@ -192,7 +191,7 @@
       id="err-elem-cit-web-11-2-2">[err-elem-cit-web-11-2-2]
       The &lt;date-in-citation> element's @iso-8601-date attribute must have the format
       'YYYY-MM-DD'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has '<xsl:value-of select="@iso-8601-date"/>',
+      Reference '<value-of select="ancestor::ref/@id"/>' has '<value-of select="@iso-8601-date"/>',
       which does not have that format.
     </assert>
 
@@ -200,16 +199,16 @@
       role="error" 
       id="err-elem-cit-web-11-3">[err-elem-cit-web-11-3]
       The format of the element content must match month, space, day, comma, year.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="."/>.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="."/>.</assert>
     
     <!-- issue 5 on the eLife lists -->
     <assert test="(string-length(@iso-8601-date) > 4) and format-date(xs:date(@iso-8601-date), '[MNn] [D], [Y]')=."
       role="error" 
       id="err-elem-cit-web-11-4">[err-elem-cit-web-11-4]
       The element content date must match the @iso-8601-date value.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has element content of 
-      <xsl:value-of select="."/> but an @iso-8601-date value of 
-      <xsl:value-of select="@iso-8601-date"/>.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has element content of 
+      <value-of select="."/> but an @iso-8601-date value of 
+      <value-of select="@iso-8601-date"/>.</assert>
     
   </rule>
   

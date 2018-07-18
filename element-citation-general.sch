@@ -61,8 +61,7 @@
 
 <pattern 
    id="element-citation-general-tests"
-   xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   xmlns="http://purl.oclc.org/dsdl/schematron">
 
 <title>General Tests for 'element-citation'</title>
   
@@ -74,19 +73,19 @@
                role="error" 
                id="err-elem-cit-gen-name-2">[err-elem-cit-gen-name-2]
 Each &lt;name> element in a reference must contain a &lt;surname> element. 
-Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
+Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
   
   <report test="descendant::etal"
     role="error" 
     id="err-elem-cit-gen-name-5">[err-elem-cit-gen-name-5]
     The &lt;etal> element in a reference is not allowed.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' contains it.</report>
+    Reference '<value-of select="ancestor::ref/@id"/>' contains it.</report>
   
   <report test="count(year)>1 "
     role="error" 
     id="err-elem-cit-gen-date-1-9">[err-elem-cit-gen-date-1-9]
     There may be at most one &lt;year> element.
-    Reference '<xsl:value-of select="ancestor::ref/@id"/>' has <xsl:value-of select="count(year)"/>
+    Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(year)"/>
     &lt;year> elements.
   </report>
 
@@ -99,7 +98,7 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       id="err-elem-cit-gen-name-3-1">[err-elem-cit-gen-name-3-1]
       Each &lt;person-group> element in a reference must contain at least one
       &lt;name> or, if allowed, &lt;collab> element. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
     
   </rule>
   
@@ -110,7 +109,7 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       id="err-elem-cit-gen-name-3-2">[err-elem-cit-gen-name-3-2]
       A &lt;collab> element in a reference may contain characters and &lt;italic>, &lt;sub>, and &lt;sup>. 
       No other elements are allowed.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' contains addiitonal elements.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' contains addiitonal elements.</assert>
     
   </rule>
 
@@ -121,8 +120,8 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       id="err-elem-cit-gen-name-4">[err-elem-cit-gen-name-4]
       The &lt;suffix> element in a reference may only contain one of the specified values
       Jnr, Snr, I, II, III, VI, V, VI, VII, VIII, IX, X.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement
-      as it contains the value '<xsl:value-of select="suffix"/>'.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement
+      as it contains the value '<value-of select="suffix"/>'.</assert>
     
   </rule>
   
@@ -134,23 +133,23 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       role="error" 
       id="err-elem-cit-gen-date-1-1">[err-elem-cit-gen-date-1-1]
       The &lt;year> element in a reference must contain 4 digits, possibly followed by one (and only one) lower-case letter.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement as it contains
-      the value '<xsl:value-of select="."/>'.
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement as it contains
+      the value '<value-of select="."/>'.
     </assert>
     
     <assert test="(1700 le number($YYYY)) and (number($YYYY) le ($current-year + 5))"
       role="error" 
       id="err-elem-cit-gen-date-1-2">[err-elem-cit-gen-date-1-2]
       The numeric value of the first 4 digits of the &lt;year> element must be between 1700 and the current year + 5 years (inclusive).
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement as it contains
-      the value '<xsl:value-of select="."/>'.
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement as it contains
+      the value '<value-of select="."/>'.
     </assert>
     
     <assert test="./@iso-8601-date"
       role="error" 
       id="err-elem-cit-gen-date-1-3">[err-elem-cit-gen-date-1-3]
       All &lt;year> elements must have @iso-8601-date attributes.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.
+      Reference '<value-of select="ancestor::ref/@id"/>' does not.
     </assert>
     
     <assert test="not(./@iso-8601-date) or (1700 le number(substring(normalize-space(@iso-8601-date),1,4)) and number(substring(normalize-space(@iso-8601-date),1,4)) le ($current-year + 5))"
@@ -158,8 +157,8 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       id="err-elem-cit-gen-date-1-4">[err-elem-cit-gen-date-1-4]
       The numeric value of the first 4 digits of the @iso-8601-date attribute on the &lt;year> element must be between 
       1700 and the current year + 5 years (inclusive).
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement as the attribute contains the value 
-      '<xsl:value-of select="./@iso-8601-date"/>'.
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement as the attribute contains the value 
+      '<value-of select="./@iso-8601-date"/>'.
     </assert>
     
     <assert test="not(./@iso-8601-date) or substring(normalize-space(./@iso-8601-date),1,4) = $YYYY"
@@ -167,9 +166,9 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       id="err-elem-cit-gen-date-1-5">[err-elem-cit-gen-date-1-5]
       The numeric value of the first 4 digits of the @iso-8601-date attribute must match the first 4 digits on the 
       &lt;year> element.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement as the element contains
-      the value '<xsl:value-of select="."/>' and the attribute contains the value 
-      '<xsl:value-of select="./@iso-8601-date"/>'.
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement as the element contains
+      the value '<value-of select="."/>' and the attribute contains the value 
+      '<value-of select="./@iso-8601-date"/>'.
     </assert>
     
     <assert test="not(concat($YYYY, 'a')=.) or (concat($YYYY, 'a')=. and 
@@ -182,7 +181,7 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       id="err-elem-cit-gen-date-1-6">[err-elem-cit-gen-date-1-6]
       If the &lt;year> element contains the letter 'a' after the digits, there must be another reference with 
       the same first author surname (or collab) with a letter "b" after the year. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not fulfill this requirement.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not fulfill this requirement.</assert>
     
     <assert test="not(starts-with(.,$YYYY) and matches(normalize-space(.),('\d{4}[b-z]'))) or
       (some $y in //element-citation/descendant::year 
@@ -195,7 +194,7 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       id="err-elem-cit-gen-date-1-7">[err-elem-cit-gen-date-1-7]
       If the &lt;year> element contains any letter other than 'a' after the digits, there must be another 
       reference with the same first author surname (or collab) with the preceding letter after the year. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not fulfill this requirement.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not fulfill this requirement.</assert>
     
     <report test="some $x in (preceding::year)
       satisfies (((count(ancestor::element-citation/person-group[1]/*)=1 and 
@@ -235,9 +234,9 @@ Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>
       role="error" 
       id="err-elem-cit-gen-date-1-8">[err-elem-cit-gen-date-1-8]
       Letter suffixes must be unique for the combination of year and author information. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not fulfill this requirement as it 
-      contains the &lt;year> '<xsl:value-of select="."/>' for the author information
-      '<xsl:value-of select="ancestor::element-citation/person-group[1]/name[1]/surname"/>', which occurs in at least one other reference.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not fulfill this requirement as it 
+      contains the &lt;year> '<value-of select="."/>' for the author information
+      '<value-of select="ancestor::element-citation/person-group[1]/name[1]/surname"/>', which occurs in at least one other reference.</report>
     
   </rule>
   

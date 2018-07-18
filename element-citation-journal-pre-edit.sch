@@ -42,8 +42,7 @@
 
 <pattern
    id="element-citation-journal-pre-edit-tests"
-   xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   xmlns="http://purl.oclc.org/dsdl/schematron">
 
 <title>element-citation publication-type="journal" Pre-edit Tests</title>
 
@@ -55,34 +54,34 @@
       id="warning-elem-cit-journal-5-2">[warning-elem-cit-journal-5-2]
       There should be either a &lt;volume> element within a &lt;element-citation> of type 'journal',
       or a &lt;comment> with content 'In press'.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has neither.</assert>
+      Reference '<value-of select="ancestor::ref/@id"/>' has neither.</assert>
     
     <report test="fpage and not(lpage)"
       role="warning" 
       id="warning-elem-cit-journal-6-8">[warning-elem-cit-journal-6-8]
       If &lt;fpage> is present, &lt;lpage> should also be present.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not have an &lt;lpage> element.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' does not have an &lt;lpage> element.</report>
     
     <report test="matches(fpage[1],'\D') or matches(lpage[1], '\D')"
       role="warning" 
       id="warning-elem-cit-journal-6-9">[warning-elem-cit-journal-6-9]
       The content of both &lt;fpage> and &lt;lpage> should be all numeric.
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' has 
-      &lt;fpage>: <xsl:value-of select="fpage"/> and &lt;lpage>: <xsl:value-of select="lpage"/>.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>' has 
+      &lt;fpage>: <value-of select="fpage"/> and &lt;lpage>: <value-of select="lpage"/>.</report>
     
     <report test="comment/text()='In press'"
       role="warning" 
       id="warning-elem-cit-journal-6-10">[warning-elem-cit-journal-6-10]
       This citation has a &lt;comment> with content 'In press' in 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>'. Check for updates.</report>
+      Reference '<value-of select="ancestor::ref/@id"/>'. Check for updates.</report>
     
     <assert test="pub-id/@pub-id-type='doi' or
       (normalize-space(document($journal-doi)/journals/journal[name=normalize-space(current()/source)]/year) > substring(normalize-space(year[1]),1,4))"
       role="warning" 
       id="warning-elem-cit-journal-9-2">[warning-elem-cit-journal-9-2]
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not have a pub-id with pub-id-type 'doi',
+      Reference '<value-of select="ancestor::ref/@id"/>' does not have a pub-id with pub-id-type 'doi',
       and the source is not on the list of journals that do not have DOIs. Check for the missing DOI for this reference:
-      &lt;source> '<xsl:value-of select="source"/>', &lt;year> <xsl:value-of select="year"/>.
+      &lt;source> '<value-of select="source"/>', &lt;year> <value-of select="year"/>.
     </assert>
 
   </rule>

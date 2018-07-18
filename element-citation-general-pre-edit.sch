@@ -32,8 +32,7 @@
 
 <pattern
    id="element-citation-general-pre-edit-tests"
-   xmlns="http://purl.oclc.org/dsdl/schematron"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   xmlns="http://purl.oclc.org/dsdl/schematron">
 
 <title>element-citation General Pre-edit Tests</title>
         
@@ -43,7 +42,7 @@
       role="warning" 
       id="warn-elem-cit-gen-name-2">[warning-elem-cit-gen-name-2]
       Each &lt;name> element in a reference must contain a &lt;given-names> element. 
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not.</report>    
+      Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>    
 
   </rule>
   
@@ -55,8 +54,8 @@
       role="warning" 
       id="warn-elem-cit-gen-date-1-2">[warn-elem-cit-gen-date-1-2]
       The numeric value of the first 4 digits of the &lt;year> element should be between 1900 and the current year + 5 years (inclusive).
-      Reference '<xsl:value-of select="ancestor::ref/@id"/>' does not meet this requirement as it contains
-      the value '<xsl:value-of select="."/>'.
+      Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement as it contains
+      the value '<value-of select="."/>'.
     </assert>    
     
   </rule>
