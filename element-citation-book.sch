@@ -150,7 +150,7 @@
       In a book reference, &lt;lpage> and &lt;fpage> are allowed only if &lt;chapter-title> is present. 
       Reference '<value-of select="ancestor::ref/@id"/>' has &lt;lpage> or &lt;fpage> but no &lt;chapter-title>.</report>
     
-    <report test="(lpage and fpage) and (fpage ge lpage[1])"
+    <report test="(lpage and fpage) and (number(fpage[1]) >= number(lpage[1]))"
       role="error" 
       id="err-elem-cit-book-36">[err-elem-cit-book-36-1]
       If both &lt;lpage> and &lt;fpage> are present, the value of &lt;fpage> must be less than the value of &lt;lpage>. 
