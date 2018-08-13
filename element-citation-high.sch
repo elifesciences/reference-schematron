@@ -85,7 +85,8 @@
     <let name="name" value="replace($name, '&#x00E5;', 'a')"/> <!-- Converting å to a -->     
     <let name="name" value="replace($name, '&#x00E6;', 'ae')"/> <!-- Converting æ to ae -->     
     <let name="name" value="replace($name, '&#x00E7;', 'c')"/> <!-- Converting ç to c -->     
-    <let name="name" value="replace($name, '&#x00E8;', 'e')"/> <!-- Converting è to e -->     
+    <let name="name" value="replace($name, '&#x00E8;', 'e')"/> <!-- Converting è to e -->
+    <let name="name" value="replace($name, '&#x00E9;', 'e')"/> <!-- Converting é to e -->     
     <let name="name" value="replace($name, '&#x00EA;', 'e')"/> <!-- Converting ê to e -->     
     <let name="name" value="replace($name, '&#x00EB;', 'e')"/> <!-- Converting ë to e -->    
     <let name="name" value="replace($name, '&#x0127;', 'h')"/> <!-- Converting ħ to h -->     
@@ -119,7 +120,8 @@
     <let name="name2" value="replace($name2, '&#x00E5;', 'a')"/> <!-- Converting å to a -->     
     <let name="name2" value="replace($name2, '&#x00E6;', 'ae')"/> <!-- Converting æ to ae -->     
     <let name="name2" value="replace($name2, '&#x00E7;', 'c')"/> <!-- Converting ç to c -->     
-    <let name="name2" value="replace($name2, '&#x00E8;', 'e')"/> <!-- Converting è to e -->     
+    <let name="name2" value="replace($name2, '&#x00E8;', 'e')"/> <!-- Converting è to e -->
+    <let name="name2" value="replace($name2, '&#x00E9;', 'e')"/> <!-- Converting é to e -->     
     <let name="name2" value="replace($name2, '&#x00EA;', 'e')"/> <!-- Converting ê to e -->     
     <let name="name2" value="replace($name2, '&#x00EB;', 'e')"/> <!-- Converting ë to e -->   
     <let name="name2" value="replace($name2, '&#x0127;', 'h')"/> <!-- Converting ħ to h -->     
@@ -154,7 +156,8 @@
     <let name="preceding-name" value="replace($preceding-name, '&#x00E5;', 'a')"/> <!-- Converting å to a -->     
     <let name="preceding-name" value="replace($preceding-name, '&#x00E6;', 'ae')"/> <!-- Converting æ to ae -->     
     <let name="preceding-name" value="replace($preceding-name, '&#x00E7;', 'c')"/> <!-- Converting ç to c -->     
-    <let name="preceding-name" value="replace($preceding-name, '&#x00E8;', 'e')"/> <!-- Converting è to e -->     
+    <let name="preceding-name" value="replace($preceding-name, '&#x00E8;', 'e')"/> <!-- Converting è to e -->
+    <let name="preceding-name" value="replace($preceding-name, '&#x00E9;', 'e')"/> <!-- Converting é to e -->     
     <let name="preceding-name" value="replace($preceding-name, '&#x00EA;', 'e')"/> <!-- Converting ê to e -->     
     <let name="preceding-name" value="replace($preceding-name, '&#x00EB;', 'e')"/> <!-- Converting ë to e -->   
     <let name="preceding-name" value="replace($preceding-name, '&#x0127;', 'h')"/> <!-- Converting ħ to h -->     
@@ -189,7 +192,8 @@
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00E5;', 'a')"/> <!-- Converting å to a -->     
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00E6;', 'ae')"/> <!-- Converting æ to ae -->     
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00E7;', 'c')"/> <!-- Converting ç to c -->     
-    <let name="preceding-name2" value="replace($preceding-name2, '&#x00E8;', 'e')"/> <!-- Converting è to e -->     
+    <let name="preceding-name2" value="replace($preceding-name2, '&#x00E8;', 'e')"/> <!-- Converting è to e --> 
+    <let name="preceding-name2" value="replace($preceding-name2, '&#x00E9;', 'e')"/> <!-- Converting é to e -->     
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00EA;', 'e')"/> <!-- Converting ê to e -->     
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00EB;', 'e')"/> <!-- Converting ë to e -->
     <let name="preceding-name2" value="replace($preceding-name2, '&#x0127;', 'h')"/> <!-- Converting ħ to h -->       
