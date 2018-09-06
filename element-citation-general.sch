@@ -125,7 +125,7 @@ Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
     
   </rule>
   
-  <rule context="element-citation/year" id="elem-citation-year">
+  <rule context="ref/element-citation/year" id="elem-citation-year">
     <let name="YYYY" value="substring(normalize-space(.), 1, 4)"/>
     <let name="current-year" value="year-from-date(current-date())"/>
     
