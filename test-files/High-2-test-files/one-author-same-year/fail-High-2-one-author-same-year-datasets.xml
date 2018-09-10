@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "../../../Working-JATS-1.1d3/JATS-archivearticle1.dtd">
+<article article-type="research-article" dtd-version="1.1d3"
+xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML"
+xmlns:ali="http://www.niso.org/schemas/ali/1.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- ============================================================ -->
+<!-- TEST:  Test <element-citation> for arrangement of two        -->
+<!--        citations with same authors amd same publication      -->
+<!--        years (rely on alphabetical arrangement of contents   -->
+<!--        of <article-title>). This is includes additional data -->
+<!--        references in a data availability section.            -->
+<!--        Test is a FAIL.                                       -->
+<!--        Source file:  elife-04126-v4.xml                      -->
+<!--        Source citations modified to show only one author.    -->
+<!-- SPONSOR: eLife Sciences Publications Ltd.                    -->
+<!-- Development by Mulberry Technologies, Inc.                   -->
+<!-- ============================================================ -->
+<front>
+<!--journal-meta is standard for all articles published by eLife.
+        No change can be made; this is boilerplate text.
+    -->
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">eLife</journal-id>
+<journal-id journal-id-type="publisher-id">eLife</journal-id>
+<journal-title-group>
+<journal-title>eLife</journal-title>
+</journal-title-group>
+<issn publication-format="electronic">2050-084X</issn>
+<publisher>
+<publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id/>
+<title-group>
+<article-title>Sample article to test Schematron Rules</article-title>
+</title-group>
+<contrib-group>
+<contrib> </contrib>
+</contrib-group>
+<pub-date>
+<year>2016</year>
+</pub-date>
+</article-meta>
+</front>
+<back>
+    <sec id="s6" sec-type="supplementary-material">
+        <sec id="s7" sec-type="data-availability">
+            <title>Data availability</title>
+            <p>All relevant data are within the paper and its Supporting Information files. The two musculoskeletal graphs used, as well as muscle 
+                community assignments, and data used to generate all figures can be found at DOI:10.5281/zenodo.1069104.</p>
+            <p>The following dataset was generated:</p>
+            <p><element-citation publication-type="data" specific-use="isSupplementedBy" id="dataset1">
+                <person-group person-group-type="author">
+                    <name><surname>Shen</surname><given-names>PS</given-names></name>
+                    <name><surname>Yang</surname><given-names>X</given-names></name>
+                    <name><surname>DeCaen</surname><given-names>PG</given-names></name>
+                    <name><surname>Wu</surname><given-names>JP</given-names></name>
+                    <name><surname>Zhou</surname><given-names>Q</given-names></name>
+                    <name><surname>Yan</surname><given-names>N</given-names></name>
+                </person-group>
+                <year iso-8601-date="2016">2016</year>
+                <data-title>Cryo-EM structure of Polycystic Kidney Disease protein 2 (PKD2), residues 198-703</data-title>
+                <source>RCSB Protein Data Bank</source>
+                <pub-id pub-id-type="accession" assigning-authority="RCSB" xlink:href="http://www.rcsb.org/structure/5T4D">5T4D</pub-id>
+            </element-citation>
+                <element-citation publication-type="data" specific-use="isSupplementedBy" id="dataset2">
+                    <person-group person-group-type="author">
+                        <name><surname>Shen</surname><given-names>PS</given-names></name>
+                        <name><surname>Yang</surname><given-names>X</given-names></name>
+                        <name><surname>DeCaen</surname><given-names>PG</given-names></name>
+                        <name><surname>Wu</surname><given-names>JP</given-names></name>
+                        <name><surname>Zhou</surname><given-names>Q</given-names></name>
+                        <name><surname>Yan</surname><given-names>N</given-names></name>
+                    </person-group>
+                    <year iso-8601-date="2016">2016</year>
+                    <data-title>Cryo-EM Structure of the Full-Length human NPC1 at 4.4 Angstrom</data-title>
+                    <source>RCSB Protein Data Bank</source>
+                    <pub-id pub-id-type="accession" assigning-authority="RCSB" xlink:href="http://www.rcsb.org/structure/3JD8">3JD8</pub-id>
+                </element-citation></p>
+        </sec>
+    </sec>
+<ref-list>
+<!-- pass: two references with same author and same publication 
+years arranged alphabetically by contents of <article-title> -->
+<ref id="bib52">
+<element-citation publication-type="journal">
+<person-group person-group-type="author"> <name>
+<surname>Manning</surname>
+<given-names>G</given-names>
+</name>
+</person-group>
+<!-- first Manning citation has an "a" -->
+<year iso-8601-date="2002">2002a</year>
+<article-title>Evolution of protein kinase signaling from yeast to man</article-title>
+<source>Trends in Biochemical Sciences</source>
+<volume>27</volume>
+<fpage>514</fpage>
+<lpage>520</lpage>
+<pub-id pub-id-type="doi">10.1016/S0968-0004(02)02179-5</pub-id>
+</element-citation>
+</ref>
+
+<ref id="bib53">
+<element-citation publication-type="journal">
+<person-group person-group-type="author"> <name>
+<surname>Manning</surname>
+<given-names>G</given-names>
+</name> </person-group>
+<!-- second Manning citation has a "b" -->
+<year iso-8601-date="2002">2002b</year>
+<article-title>The protein kinase complement of the human genome</article-title>
+<source>Science</source>
+<volume>298</volume>
+<fpage>1912</fpage>
+<lpage>1934</lpage>
+<pub-id pub-id-type="doi">10.1126/science.1075762</pub-id>
+</element-citation>
+</ref>
+
+
+<!-- fail: two references with same author and same publication 
+years NOT arranged alphabetically by contents of <article-title> -->
+<ref id="bib952">
+<element-citation publication-type="journal">
+<person-group person-group-type="author"> <name>
+<surname>Manning</surname>
+<given-names>G</given-names>
+</name> </person-group>
+<!-- second Manning citation has an "a" -->
+<year iso-8601-date="2001">2001a</year>
+<article-title>The protein kinase complement of the human genome</article-title>
+<source>Science</source>
+<volume>298</volume>
+<fpage>1912</fpage>
+<lpage>1934</lpage>
+<pub-id pub-id-type="doi">10.1126/science.1075762</pub-id>
+</element-citation>
+</ref>
+
+<ref id="bib953">
+<element-citation publication-type="journal">
+<person-group person-group-type="author"> <name>
+<surname>Manning</surname>
+<given-names>G</given-names>
+</name>
+</person-group>
+<!-- first Manning citation has an "b" -->
+<year iso-8601-date="2001">2001b</year>
+<article-title>Evolution of protein kinase signaling from yeast to man</article-title>
+<source>Trends in Biochemical Sciences</source>
+<volume>27</volume>
+<fpage>514</fpage>
+<lpage>520</lpage>
+<pub-id pub-id-type="doi">10.1016/S0968-0004(02)02179-5</pub-id>
+</element-citation>
+</ref>
+</ref-list>
+</back>
+</article>
