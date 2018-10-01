@@ -96,10 +96,10 @@
     <let name="name" value="replace($name, '&#x00EF;', 'i')"/> <!-- Converting ï to i -->
     <let name="name" value="replace($name, '&#x0142;', 'l')"/> <!-- Converting ł to i -->
     <let name="name" value="replace($name, '&#x00F1;', 'n')"/> <!-- Converting ñ to n -->
-    <let name="name" value="replace($name, '&#x00F2;', 'n')"/> <!-- Converting ò to o -->
-    <let name="name" value="replace($name, '&#x00F3;', 'n')"/> <!-- Converting ó to o -->
-    <let name="name" value="replace($name, '&#x00F4;', 'n')"/> <!-- Converting ô to o -->
-    <let name="name" value="replace($name, '&#x00F5;', 'n')"/> <!-- Converting õ to o -->
+    <let name="name" value="replace($name, '&#x00F2;', 'o')"/> <!-- Converting ò to o -->
+    <let name="name" value="replace($name, '&#x00F3;', 'o')"/> <!-- Converting ó to o -->
+    <let name="name" value="replace($name, '&#x00F4;', 'o')"/> <!-- Converting ô to o -->
+    <let name="name" value="replace($name, '&#x00F5;', 'o')"/> <!-- Converting õ to o -->
     <let name="name" value="replace($name, '&#x00F6;', 'o')"/> <!-- Converting ö to o -->
     <let name="name" value="replace($name, '&#x00F8;', 'o')"/> <!-- Converting ø to o -->
     <let name="name" value="replace($name, '&#x00F9;', 'u')"/> <!-- Converting ù to u -->
@@ -131,10 +131,10 @@
     <let name="name2" value="replace($name2, '&#x00EF;', 'i')"/> <!-- Converting ï to i -->
     <let name="name2" value="replace($name2, '&#x0142;', 'l')"/> <!-- Converting ł to i -->
     <let name="name2" value="replace($name2, '&#x00F1;', 'n')"/> <!-- Converting ñ to n -->
-    <let name="name2" value="replace($name2, '&#x00F2;', 'n')"/> <!-- Converting ò to o -->
-    <let name="name2" value="replace($name2, '&#x00F3;', 'n')"/> <!-- Converting ó to o -->
-    <let name="name2" value="replace($name2, '&#x00F4;', 'n')"/> <!-- Converting ô to o -->
-    <let name="name2" value="replace($name2, '&#x00F5;', 'n')"/> <!-- Converting õ to o -->
+    <let name="name2" value="replace($name2, '&#x00F2;', 'o')"/> <!-- Converting ò to o -->
+    <let name="name2" value="replace($name2, '&#x00F3;', 'o')"/> <!-- Converting ó to o -->
+    <let name="name2" value="replace($name2, '&#x00F4;', 'o')"/> <!-- Converting ô to o -->
+    <let name="name2" value="replace($name2, '&#x00F5;', 'o')"/> <!-- Converting õ to o -->
     <let name="name2" value="replace($name2, '&#x00F6;', 'o')"/> <!-- Converting ö to o -->
     <let name="name2" value="replace($name2, '&#x00F8;', 'o')"/> <!-- Converting ø to o -->
     <let name="name2" value="replace($name2, '&#x00F9;', 'u')"/> <!-- Converting ù to u -->
@@ -167,10 +167,10 @@
     <let name="preceding-name" value="replace($preceding-name, '&#x00EF;', 'i')"/> <!-- Converting ï to i -->
     <let name="preceding-name" value="replace($preceding-name, '&#x0142;', 'l')"/> <!-- Converting ł to i -->
     <let name="preceding-name" value="replace($preceding-name, '&#x00F1;', 'n')"/> <!-- Converting ñ to n -->
-    <let name="preceding-name" value="replace($preceding-name, '&#x00F2;', 'n')"/> <!-- Converting ò to o -->
-    <let name="preceding-name" value="replace($preceding-name, '&#x00F3;', 'n')"/> <!-- Converting ó to o -->
-    <let name="preceding-name" value="replace($preceding-name, '&#x00F4;', 'n')"/> <!-- Converting ô to o -->
-    <let name="preceding-name" value="replace($preceding-name, '&#x00F5;', 'n')"/> <!-- Converting õ to o -->
+    <let name="preceding-name" value="replace($preceding-name, '&#x00F2;', 'o')"/> <!-- Converting ò to o -->
+    <let name="preceding-name" value="replace($preceding-name, '&#x00F3;', 'o')"/> <!-- Converting ó to o -->
+    <let name="preceding-name" value="replace($preceding-name, '&#x00F4;', 'o')"/> <!-- Converting ô to o -->
+    <let name="preceding-name" value="replace($preceding-name, '&#x00F5;', 'o')"/> <!-- Converting õ to o -->
     <let name="preceding-name" value="replace($preceding-name, '&#x00F6;', 'o')"/> <!-- Converting ö to o -->
     <let name="preceding-name" value="replace($preceding-name, '&#x00F8;', 'o')"/> <!-- Converting ø to o -->
     <let name="preceding-name" value="replace($preceding-name, '&#x00F9;', 'u')"/> <!-- Converting ù to u -->
@@ -203,10 +203,10 @@
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00EF;', 'i')"/> <!-- Converting ï to i -->
     <let name="preceding-name2" value="replace($preceding-name2, '&#x0142;', 'l')"/> <!-- Converting ł to i -->
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00F1;', 'n')"/> <!-- Converting ñ to n -->
-    <let name="preceding-name2" value="replace($preceding-name2, '&#x00F2;', 'n')"/> <!-- Converting ò to o -->
-    <let name="preceding-name2" value="replace($preceding-name2, '&#x00F3;', 'n')"/> <!-- Converting ó to o -->
-    <let name="preceding-name2" value="replace($preceding-name2, '&#x00F4;', 'n')"/> <!-- Converting ô to o -->
-    <let name="preceding-name2" value="replace($preceding-name2, '&#x00F5;', 'n')"/> <!-- Converting õ to o -->
+    <let name="preceding-name2" value="replace($preceding-name2, '&#x00F2;', 'o')"/> <!-- Converting ò to o -->
+    <let name="preceding-name2" value="replace($preceding-name2, '&#x00F3;', 'o')"/> <!-- Converting ó to o -->
+    <let name="preceding-name2" value="replace($preceding-name2, '&#x00F4;', 'o')"/> <!-- Converting ô to o -->
+    <let name="preceding-name2" value="replace($preceding-name2, '&#x00F5;', 'o')"/> <!-- Converting õ to o -->
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00F6;', 'o')"/> <!-- Converting ö to o -->
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00F8;', 'o')"/> <!-- Converting ø to o -->
     <let name="preceding-name2" value="replace($preceding-name2, '&#x00F9;', 'u')"/> <!-- Converting ù to u -->
