@@ -196,7 +196,7 @@ Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
       reference with the same first author surname (or collab) with the preceding letter after the year. 
       Reference '<value-of select="ancestor::ref/@id"/>' does not fulfill this requirement.</assert>
     
-    <report test="some $x in (preceding::year)
+    <report test="some $x in (preceding::year[ancestor::ref-list])
       satisfies (((count(ancestor::element-citation/person-group[1]/*)=1 and 
       count($x/ancestor::element-citation/person-group[1]/*)=1) and 
       ((ancestor::element-citation/person-group[1]/name[1]/surname and 
