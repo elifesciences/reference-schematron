@@ -58,13 +58,13 @@
       9. There may be at most one <year> element.
 
 -->
-
+  
 <pattern 
    id="element-citation-general-tests"
    xmlns="http://purl.oclc.org/dsdl/schematron">
-
-<title>General Tests for 'element-citation'</title>
   
+<title>General Tests for 'element-citation'</title>
+    
   <!-- Name rules -->
 
 <rule context="element-citation" id="elem-citation-general">
@@ -128,6 +128,7 @@ Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
   <rule context="ref/element-citation/year" id="elem-citation-year">
     <let name="YYYY" value="substring(normalize-space(.), 1, 4)"/>
     <let name="current-year" value="year-from-date(current-date())"/>
+    <let name="citation" value="e:citation-format(self::*)"/>
     
     <assert test="matches(normalize-space(.),'(^\d{4}[a-z]?)')"
       role="error" 
@@ -197,40 +198,7 @@ Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
       Reference '<value-of select="ancestor::ref/@id"/>' does not fulfill this requirement.</assert>
     
     <report test="some $x in (preceding::year[ancestor::ref-list])
-      satisfies (((count(ancestor::element-citation/person-group[1]/*)=1 and 
-      count($x/ancestor::element-citation/person-group[1]/*)=1) and 
-      ((ancestor::element-citation/person-group[1]/name[1]/surname and 
-      concat($x,'+',$x/ancestor::element-citation/person-group[1]/name[1]/surname)
-      = concat(current(),'+',ancestor::element-citation/person-group[1]/name[1]/surname))
-      or
-      (ancestor::element-citation/person-group[1]/collab[1] and 
-      concat($x,'+',$x/ancestor::element-citation/person-group[1]/collab[1])
-      = concat(current(),'+',ancestor::element-citation/person-group[1]/collab[1]))))
-      or ((count(ancestor::element-citation/person-group[1]/*) ge 3 and 
-      count($x/ancestor::element-citation/person-group[1]/*) ge 3)  and 
-      ((ancestor::element-citation/person-group[1]/name[1]/surname and 
-      concat($x,'+',$x/ancestor::element-citation/person-group[1]/name[1]/surname)
-      = concat(current(),'+',ancestor::element-citation/person-group[1]/name[1]/surname))
-      or
-      (ancestor::element-citation/person-group[1]/collab[1] and 
-      concat($x,'+',$x/ancestor::element-citation/person-group[1]/collab[1])
-      = concat(current(),'+',ancestor::element-citation/person-group[1]/collab[1]))))
-      or
-      ((count(ancestor::element-citation/person-group[1]/*)=2 and 
-      count($x/ancestor::element-citation/person-group[1]/*)=2)  and 
-      ((ancestor::element-citation/person-group[1]/name[1]/surname=$x/ancestor::element-citation/person-group[1]/name[1]/surname
-      and
-      (ancestor::element-citation/person-group[1]/name[2]/surname=$x/ancestor::element-citation/person-group[1]/name[2]/surname
-      or
-      ancestor::element-citation/person-group[1]/*[2]=$x/ancestor::element-citation/person-group[1]/*[2]))
-      or
-      (ancestor::element-citation/person-group[1]/*[1]=$x/ancestor::element-citation/person-group[1]/*[1]
-      and
-      (ancestor::element-citation/person-group[1]/name[2]/surname=$x/ancestor::element-citation/person-group[1]/name[2]/surname
-      or
-      ancestor::element-citation/person-group[1]/*[2]=$x/ancestor::element-citation/person-group[1]/*[2])))
-      and $x=current())
-      )"
+      satisfies  e:citation-format($x) = $citation"
       role="error" 
       id="err-elem-cit-gen-date-1-8">[err-elem-cit-gen-date-1-8]
       Letter suffixes must be unique for the combination of year and author information. 
