@@ -58,13 +58,13 @@
       9. There may be at most one <year> element.
 
 -->
-  
+
 <pattern 
    id="element-citation-general-tests"
    xmlns="http://purl.oclc.org/dsdl/schematron">
-  
+
 <title>General Tests for 'element-citation'</title>
-    
+  
   <!-- Name rules -->
 
 <rule context="element-citation" id="elem-citation-general">
