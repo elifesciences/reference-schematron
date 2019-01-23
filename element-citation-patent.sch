@@ -33,7 +33,9 @@
        2. <article-title> may contain characters and only these tags: <italic>, <sub>, <sup>
        
        patent-9:
-       1. <source> may occur zero or one time.
+       1. <source> must occur once.
+       UPDATE: <source> is actually a required element - rule changed accordingly
+       
        2. <source> must contain at least 2 characters and may only contain <sub>, <sup> and <italic> 
        
        patent-10:
@@ -93,10 +95,10 @@
         Reference '<value-of select="ancestor::ref/@id"/>' has 
         <value-of select="count(article-title)"/> &lt;article-title> elements.</assert>
     
-    <assert test="count(source) le 1"
+    <assert test="count(source) = 1"
       role="error" 
       id="err-elem-cit-patent-9-1">[err-elem-cit-patent-9-1]
-      Each  &lt;element-citation> of type 'patent' may contain zero or one &lt;source> elements.
+      Each  &lt;element-citation> of type 'patent' must contain one and only one &lt;source> elements.
       Reference '<value-of select="ancestor::ref/@id"/>' has 
       <value-of select="count(source)"/> &lt;source> elements.</assert>
     
