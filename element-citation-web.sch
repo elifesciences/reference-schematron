@@ -202,13 +202,13 @@
       Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="."/>.</assert>
     
     <!-- issue 5 on the eLife lists -->
-    <assert test="(string-length(@iso-8601-date) > 4) and format-date(xs:date(@iso-8601-date), '[MNn] [D], [Y]')=."
-      role="error" 
-      id="err-elem-cit-web-11-4">[err-elem-cit-web-11-4]
+    <report test="if (string-length(@iso-8601-date) = 10) then format-date(xs:date(@iso-8601-date), '[MNn] [D], [Y]')!=.
+      else (string-length(@iso-8601-date) &lt; 10)" role="error" id="err-elem-cit-web-11-4">[err-elem-cit-web-11-4]
       The element content date must match the @iso-8601-date value.
       Reference '<value-of select="ancestor::ref/@id"/>' has element content of 
       <value-of select="."/> but an @iso-8601-date value of 
-      <value-of select="@iso-8601-date"/>.</assert>
+      <value-of select="@iso-8601-date"/>.</report>
+    
     
   </rule>
   
