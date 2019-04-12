@@ -77,24 +77,24 @@
     <let name="name-1" value="lower-case(if (local-name(element-citation/person-group[1]/*[1])='name')
       then (element-citation/person-group[1]/name[1]/surname)
       else (element-citation/person-group[1]/*[1]))"/>
-    <let name="name" value="replace(translate($name-1,'àáâãäåçčèéêëħìíîïłñòóôõöøšśùúûüýÿ','aaaaaacceeeehiiiilnoooooossuuuuyy'),'æ','ae')"/>
+    <let name="name" value="replace(translate($name-1,'àáâãäåçčèéêëħìíîïłñòóôõöøšśşùúûüýÿ','aaaaaacceeeehiiiilnoooooosssuuuuyy'),'æ','ae')"/>
     
     <let name="name-2" value="lower-case(if (local-name(element-citation/person-group[1]/*[2])='name')
       then (element-citation/person-group[1]/*[2]/surname)
       else (element-citation/person-group[1]/*[2]))"/>
-    <let name="name2" value="replace(translate($name-2,'àáâãäåçčèéêëħìíîïłñòóôõöøšśùúûüýÿ','aaaaaacceeeehiiiilnoooooossuuuuyy'),'æ','ae')"/>
+    <let name="name2" value="replace(translate($name-2,'àáâãäåçčèéêëħìíîïłñòóôõöøšśşùúûüýÿ','aaaaaacceeeehiiiilnoooooosssuuuuyy'),'æ','ae')"/>
     
     <let name="preceding-name-1" value="lower-case(if (preceding-sibling::ref[1] and
       local-name(preceding-sibling::ref[1]/element-citation/person-group[1]/*[1])='name')
       then (preceding-sibling::ref[1]/element-citation/person-group[1]/name[1]/surname)
       else (preceding-sibling::ref[1]/element-citation/person-group[1]/*[1]))"/>
-    <let name="preceding-name" value="replace(translate($preceding-name-1,'àáâãäåçčèéêëħìíîïłñòóôõöøšśùúûüýÿ','aaaaaacceeeehiiiilnoooooossuuuuyy'),'æ','ae')"/>
+    <let name="preceding-name" value="replace(translate($preceding-name-1,'àáâãäåçčèéêëħìíîïłñòóôõöøšśşùúûüýÿ','aaaaaacceeeehiiiilnoooooosssuuuuyy'),'æ','ae')"/>
 
     <let name="preceding-name-2" value="lower-case(if (preceding-sibling::ref[1] and
       local-name(preceding-sibling::ref[1]/element-citation/person-group[1]/*[2])='name')
       then (preceding-sibling::ref[1]/element-citation/person-group[1]/*[2]/surname)
       else (preceding-sibling::ref[1]/element-citation/person-group[1]/*[2]))"/>
-    <let name="preceding-name2" value="replace(translate($preceding-name-2,'àáâãäåçčèéêëħìíîïłñòóôõöøšśùúûüýÿ','aaaaaacceeeehiiiilnoooooossuuuuyy'),'æ','ae')"/>
+    <let name="preceding-name2" value="replace(translate($preceding-name-2,'àáâãäåçčèéêëħìíîïłñòóôõöøšśşùúûüýÿ','aaaaaacceeeehiiiilnoooooosssuuuuyy'),'æ','ae')"/>
     
     <assert test="count(*) = count(element-citation)"
       role="error" 
