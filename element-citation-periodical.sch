@@ -171,7 +171,7 @@ with the attribute person-group-type set to 'author'. Reference
       Reference '<value-of select="ancestor::ref/@id"/>' has <value-of select="count(fpage)"/>
       &lt;fpage> elements and <value-of select="count(lpage)"/> &lt;lpage> elements.</report>
     
-    <report test="(lpage and fpage) and (fpage ge lpage)"
+    <report test="(lpage and fpage) and (fpage[1] ge lpage[1])"
       role="error" 
       id="err-elem-cit-periodical-11-3">[err-elem-cit-periodical-11-3]
       If both &lt;lpage> and &lt;fpage> are present, the value of &lt;fpage> must be less than the value of &lt;lpage>. 
