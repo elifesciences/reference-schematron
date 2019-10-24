@@ -139,7 +139,7 @@ Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
     </assert>
     
     <assert test="(1700 le number($YYYY)) and (number($YYYY) le ($current-year + 5))"
-      role="error" 
+      role="warning" 
       id="err-elem-cit-gen-date-1-2">[err-elem-cit-gen-date-1-2]
       The numeric value of the first 4 digits of the &lt;year> element must be between 1700 and the current year + 5 years (inclusive).
       Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement as it contains
@@ -154,7 +154,7 @@ Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
     </assert>
     
     <assert test="not(./@iso-8601-date) or (1700 le number(substring(normalize-space(@iso-8601-date),1,4)) and number(substring(normalize-space(@iso-8601-date),1,4)) le ($current-year + 5))"
-      role="error" 
+      role="warning" 
       id="err-elem-cit-gen-date-1-4">[err-elem-cit-gen-date-1-4]
       The numeric value of the first 4 digits of the @iso-8601-date attribute on the &lt;year> element must be between 
       1700 and the current year + 5 years (inclusive).
