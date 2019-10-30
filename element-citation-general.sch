@@ -140,7 +140,7 @@ Reference '<value-of select="ancestor::ref/@id"/>' does not.</report>
     
     <assert test="(1700 le number($YYYY)) and (number($YYYY) le ($current-year + 5))"
       role="warning" 
-      id="warn-elem-cit-gen-date-1-2">[warn-elem-cit-gen-date-1-2]
+      id="warn-elem-cit-gen-date-1-2-1">[warn-elem-cit-gen-date-1-2-1]
       The numeric value of the first 4 digits of the &lt;year> element must be between 1700 and the current year + 5 years (inclusive).
       Reference '<value-of select="ancestor::ref/@id"/>' does not meet this requirement as it contains
       the value '<value-of select="."/>'.
